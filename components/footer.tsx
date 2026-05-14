@@ -8,10 +8,10 @@ export function Footer() {
   const scrollToTop = useScrollToTop()
 
   const quickLinks = [
-    { href: "#programs", label: "Programs" },
-    { href: "#about", label: "About" },
-    { href: "#gallery", label: "Gallery" },
-    { href: "#faq", label: "FAQ" },
+    { href: "/#programs", label: "Programs" },
+    { href: "/#about", label: "About" },
+    { href: "/#gallery", label: "Gallery" },
+    { href: "/#faq", label: "FAQ" },
     { href: "/contact", label: "Contact" },
   ]
 
@@ -42,21 +42,12 @@ export function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  {link.href.startsWith("/") ? (
-                    <Link
-                      href={link.href}
-                      className="text-cream/70 text-sm hover:text-gold transition-colors duration-300"
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      href={link.href}
-                      className="text-cream/70 text-sm hover:text-gold transition-colors duration-300"
-                    >
-                      {link.label}
-                    </a>
-                  )}
+                  <Link
+                    href={link.href}
+                    className="text-cream/70 text-sm hover:text-gold transition-colors duration-300"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
