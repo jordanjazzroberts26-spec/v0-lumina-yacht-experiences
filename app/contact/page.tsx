@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
 import { ExperienceModal } from "@/components/experience-modal"
+import { WhyLuminaModal } from "@/components/why-lumina-modal"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
@@ -15,6 +16,7 @@ import { ScrollAnimation } from "@/lib/animations"
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isWhyModalOpen, setIsWhyModalOpen] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -201,7 +203,10 @@ export default function ContactPage() {
       </div>
 
       {/* CTA Section */}
-      <FinalCTA onOpenModal={() => setIsModalOpen(true)} />
+      <FinalCTA 
+        onOpenModal={() => setIsModalOpen(true)} 
+        onOpenWhyModal={() => setIsWhyModalOpen(true)}
+      />
 
       {/* Footer */}
       <Footer />
@@ -210,6 +215,12 @@ export default function ContactPage() {
       <ExperienceModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+      />
+
+      {/* Why Lumina Modal */}
+      <WhyLuminaModal
+        isOpen={isWhyModalOpen}
+        onClose={() => setIsWhyModalOpen(false)}
       />
     </main>
   )

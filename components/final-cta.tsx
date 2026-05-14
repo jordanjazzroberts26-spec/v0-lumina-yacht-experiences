@@ -5,9 +5,10 @@ import { ScrollAnimation } from "@/lib/animations"
 
 interface FinalCTAProps {
   onOpenModal: () => void
+  onOpenWhyModal?: () => void
 }
 
-export function FinalCTA({ onOpenModal }: FinalCTAProps) {
+export function FinalCTA({ onOpenModal, onOpenWhyModal }: FinalCTAProps) {
   return (
     <section className="py-24 px-6 lg:px-12 bg-gradient-to-b from-cream to-secondary">
       <div className="max-w-3xl mx-auto text-center">
@@ -26,13 +27,23 @@ export function FinalCTA({ onOpenModal }: FinalCTAProps) {
         </ScrollAnimation>
 
         <ScrollAnimation animation="fade-up" delay={400}>
-          <Button
-            onClick={onOpenModal}
-            size="lg"
-            className="bg-gold text-navy font-medium hover:bg-gold/90 transition-all duration-300 px-10 py-6 text-lg"
-          >
-            Plan My Voyage
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button
+              onClick={onOpenModal}
+              size="lg"
+              className="bg-gold text-navy font-medium hover:bg-gold/90 transition-all duration-300 px-10 py-6 text-lg"
+            >
+              Plan My Voyage
+            </Button>
+            {onOpenWhyModal && (
+              <button
+                onClick={onOpenWhyModal}
+                className="text-charcoal/60 hover:text-navy underline underline-offset-4 transition-colors text-sm"
+              >
+                Why Lumina
+              </button>
+            )}
+          </div>
         </ScrollAnimation>
       </div>
     </section>
