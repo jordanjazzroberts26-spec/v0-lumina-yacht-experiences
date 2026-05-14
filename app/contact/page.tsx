@@ -4,6 +4,9 @@ import { useState } from "react"
 import Link from "next/link"
 import { ArrowLeft, Check, Mail, MessageCircle, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Footer } from "@/components/footer"
+import { FinalCTA } from "@/components/final-cta"
+import { ExperienceModal } from "@/components/experience-modal"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
@@ -11,6 +14,7 @@ import { ScrollAnimation } from "@/lib/animations"
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -195,6 +199,18 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      {/* CTA Section */}
+      <FinalCTA onOpenModal={() => setIsModalOpen(true)} />
+
+      {/* Footer */}
+      <Footer />
+
+      {/* Experience Modal */}
+      <ExperienceModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </main>
   )
 }
