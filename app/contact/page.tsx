@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, Check, Mail, Phone, Clock } from "lucide-react"
+import { ArrowLeft, Check, Mail, MessageCircle, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -14,8 +14,6 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
-    subject: "",
     message: "",
   })
 
@@ -27,235 +25,176 @@ export default function ContactPage() {
       setFormData({
         name: "",
         email: "",
-        phone: "",
-        subject: "",
         message: "",
       })
     }, 5000)
   }
 
   return (
-    <main className="min-h-screen bg-cream">
-      {/* Header */}
-      <header className="bg-navy py-6 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-xl font-semibold text-cream tracking-wide">
-            LUMINA
-          </Link>
+    <main className="min-h-screen bg-navy">
+      {/* Back Link */}
+      <div className="px-6 lg:px-12 pt-8">
+        <div className="max-w-6xl mx-auto">
           <Link
             href="/"
-            className="flex items-center gap-2 text-cream/80 hover:text-gold transition-colors text-sm"
+            className="inline-flex items-center gap-2 text-cream/60 hover:text-gold transition-colors text-sm"
           >
             <ArrowLeft size={16} />
-            Back to Experiences
+            Back to Home
           </Link>
         </div>
-      </header>
+      </div>
 
-      <div className="py-24 px-6 lg:px-12">
+      <div className="py-16 lg:py-24 px-6 lg:px-12">
         <div className="max-w-6xl mx-auto">
-          <ScrollAnimation animation="fade-up" className="text-center mb-16">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-navy mb-4">
+          {/* Header */}
+          <ScrollAnimation animation="fade-up" className="mb-12 lg:mb-16">
+            <p className="text-gold text-sm tracking-widest uppercase mb-3">
+              Get in Touch
+            </p>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-cream mb-4">
               Contact Captain Elena
             </h1>
-            <p className="text-charcoal/70 max-w-2xl mx-auto">
-              Begin your journey with a personal conversation. Share your vision,
-              and let us craft your perfect voyage.
+            <p className="text-cream/60 max-w-xl text-lg">
+              Have questions about our yacht experiences or want to discuss if a voyage 
+              is right for you? Reach out directly and I&apos;ll get back to you within 24 hours.
             </p>
           </ScrollAnimation>
 
-          <div className="grid gap-12 lg:grid-cols-2">
-            {/* Contact Information */}
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+            {/* Left Side - Info Cards */}
             <ScrollAnimation animation="fade-up" delay={200}>
-              <div className="space-y-8">
-                <div>
-                  <h2 className="text-2xl font-semibold text-navy mb-6">
-                    Get in Touch
-                  </h2>
-                  <p className="text-charcoal/70 leading-relaxed mb-8">
-                    Whether you have questions about our programs, want to discuss
-                    a custom voyage, or simply want to learn more about the Lumina
-                    experience, we are here for you.
-                  </p>
-                </div>
-
-                <div className="space-y-6">
+              <div className="space-y-4">
+                {/* Email Card */}
+                <div className="bg-cream/5 border border-cream/10 rounded-lg p-5">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
                       <Mail className="text-gold" size={18} />
                     </div>
                     <div>
-                      <h3 className="font-medium text-navy">Email</h3>
-                      <p className="text-charcoal/70">hello@luminayachts.com</p>
+                      <h3 className="font-medium text-cream mb-1">Email</h3>
+                      <p className="text-cream/60 text-sm">captain@luminayachts.com</p>
                     </div>
                   </div>
+                </div>
 
+                {/* Direct Access Card */}
+                <div className="bg-cream/5 border border-cream/10 rounded-lg p-5">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
-                      <Phone className="text-gold" size={18} />
+                      <MessageCircle className="text-gold" size={18} />
                     </div>
                     <div>
-                      <h3 className="font-medium text-navy">Phone</h3>
-                      <p className="text-charcoal/70">+1 (555) 123-4567</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
-                      <Clock className="text-gold" size={18} />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-navy">Office Hours</h3>
-                      <p className="text-charcoal/70">
-                        Monday - Friday: 9:00 AM - 6:00 PM EST
-                      </p>
-                      <p className="text-charcoal/70">
-                        Saturday: 10:00 AM - 4:00 PM EST
+                      <h3 className="font-medium text-cream mb-1">Direct Access</h3>
+                      <p className="text-cream/60 text-sm">
+                        Program members get 24/7 access via text and voice memo
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <blockquote className="border-l-4 border-gold pl-6 italic text-navy mt-8">
-                  &quot;Every great voyage begins with a simple hello.&quot;
-                  <footer className="text-charcoal/70 text-sm mt-2 not-italic">
-                    — Captain Elena Voss
-                  </footer>
-                </blockquote>
+                {/* Response Time Card */}
+                <div className="bg-cream/5 border border-cream/10 rounded-lg p-5">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                      <Clock className="text-gold" size={18} />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-cream mb-1">Response Time</h3>
+                      <p className="text-cream/60 text-sm">
+                        I personally respond to all inquiries within 24 hours
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </ScrollAnimation>
 
-            {/* Contact Form */}
+            {/* Right Side - Contact Form */}
             <ScrollAnimation animation="fade-up" delay={400}>
-              <div className="bg-card rounded-lg p-8 shadow-sm">
+              <div>
                 {isSubmitted ? (
-                  <div className="flex flex-col items-center justify-center py-12 text-center animate-fade-up">
+                  <div className="flex flex-col items-center justify-center py-16 text-center animate-fade-up">
                     <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mb-4">
                       <Check className="text-gold" size={32} />
                     </div>
-                    <h3 className="text-2xl font-semibold text-navy mb-2">
+                    <h3 className="text-2xl font-semibold text-cream mb-2">
                       Message Sent
                     </h3>
-                    <p className="text-charcoal/70">
-                      Captain Elena will respond within 24 hours to discuss your
-                      voyage.
+                    <p className="text-cream/60">
+                      Captain Elena will respond within 24 hours to discuss your voyage.
                     </p>
                   </div>
                 ) : (
-                  <>
-                    <h2 className="text-xl font-semibold text-navy mb-6">
-                      Send a Message
-                    </h2>
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                      <div className="grid gap-4 sm:grid-cols-2">
-                        <div className="space-y-2">
-                          <Label htmlFor="name" className="text-navy">
-                            Name
-                          </Label>
-                          <Input
-                            id="name"
-                            value={formData.name}
-                            onChange={(e) =>
-                              setFormData({ ...formData, name: e.target.value })
-                            }
-                            required
-                            className="border-border"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email" className="text-navy">
-                            Email
-                          </Label>
-                          <Input
-                            id="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={(e) =>
-                              setFormData({ ...formData, email: e.target.value })
-                            }
-                            required
-                            className="border-border"
-                          />
-                        </div>
-                      </div>
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-cream/80 text-sm">
+                        Name
+                      </Label>
+                      <Input
+                        id="name"
+                        placeholder="Your name"
+                        value={formData.name}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
+                        required
+                        className="bg-cream/5 border-cream/10 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:ring-gold/20"
+                      />
+                    </div>
 
-                      <div className="grid gap-4 sm:grid-cols-2">
-                        <div className="space-y-2">
-                          <Label htmlFor="phone" className="text-navy">
-                            Phone (optional)
-                          </Label>
-                          <Input
-                            id="phone"
-                            type="tel"
-                            value={formData.phone}
-                            onChange={(e) =>
-                              setFormData({ ...formData, phone: e.target.value })
-                            }
-                            className="border-border"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="subject" className="text-navy">
-                            Subject
-                          </Label>
-                          <Input
-                            id="subject"
-                            value={formData.subject}
-                            onChange={(e) =>
-                              setFormData({ ...formData, subject: e.target.value })
-                            }
-                            required
-                            className="border-border"
-                          />
-                        </div>
-                      </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-cream/80 text-sm">
+                        Email
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="you@company.com"
+                        value={formData.email}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
+                        required
+                        className="bg-cream/5 border-cream/10 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:ring-gold/20"
+                      />
+                    </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="message" className="text-navy">
-                          Message
-                        </Label>
-                        <Textarea
-                          id="message"
-                          placeholder="Tell us about your dream voyage..."
-                          rows={5}
-                          value={formData.message}
-                          onChange={(e) =>
-                            setFormData({ ...formData, message: e.target.value })
-                          }
-                          required
-                          className="border-border resize-none"
-                        />
-                      </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="message" className="text-cream/80 text-sm">
+                        Message
+                      </Label>
+                      <Textarea
+                        id="message"
+                        placeholder="Tell me about your goals and any questions you have..."
+                        rows={5}
+                        value={formData.message}
+                        onChange={(e) =>
+                          setFormData({ ...formData, message: e.target.value })
+                        }
+                        required
+                        className="bg-cream/5 border-cream/10 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:ring-gold/20 resize-none"
+                      />
+                    </div>
 
-                      <Button
-                        type="submit"
-                        className="w-full bg-gold text-navy font-medium hover:bg-gold/90 transition-all duration-300 mt-4"
-                      >
-                        Send Message
-                      </Button>
-                    </form>
-                  </>
+                    <Button
+                      type="submit"
+                      className="w-full bg-gold text-navy font-medium hover:bg-gold/90 transition-all duration-300"
+                    >
+                      Send Message
+                    </Button>
+                  </form>
                 )}
+
+                {/* Privacy Note */}
+                <p className="text-cream/40 text-xs text-center mt-6">
+                  Your information is kept confidential and never shared.
+                </p>
               </div>
             </ScrollAnimation>
           </div>
         </div>
       </div>
-
-      {/* Simple Footer */}
-      <footer className="bg-navy py-8 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-cream/50 text-sm">
-            {new Date().getFullYear()} Lumina Yacht Experiences. All rights reserved.
-          </p>
-          <Link
-            href="/"
-            className="text-cream/70 hover:text-gold transition-colors text-sm"
-          >
-            Back to Home
-          </Link>
-        </div>
-      </footer>
     </main>
   )
 }
