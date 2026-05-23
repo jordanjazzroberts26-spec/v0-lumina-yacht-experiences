@@ -54,7 +54,7 @@ export function FAQ({ onOpenModal }: FAQProps) {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-navy mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-charcoal/70">
+          <p className="text-charcoal/70 text-lg">
             Everything you need to know about your voyage
           </p>
         </ScrollAnimation>
@@ -67,10 +67,10 @@ export function FAQ({ onOpenModal }: FAQProps) {
                 value={`item-${index}`}
                 className="bg-card rounded-lg px-6 border border-border"
               >
-                <AccordionTrigger className="text-left text-navy font-medium hover:text-gold transition-colors py-5">
+                <AccordionTrigger className="text-left text-navy font-medium hover:text-gold transition-colors py-5 text-lg">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-charcoal/70 leading-relaxed pb-5">
+                <AccordionContent className="text-charcoal/80 leading-relaxed pb-5 text-base">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -79,7 +79,7 @@ export function FAQ({ onOpenModal }: FAQProps) {
         </ScrollAnimation>
 
         <ScrollAnimation animation="fade-up" delay={400} className="text-center mt-12">
-          <p className="text-charcoal/70 mb-4">
+          <p className="text-charcoal/70 mb-4 text-lg">
             Have more questions? We would love to hear from you.
           </p>
           <Button

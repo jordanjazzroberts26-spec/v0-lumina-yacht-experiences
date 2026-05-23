@@ -7,7 +7,7 @@ const galleryImages = [
   {
     src: "/images/gallery-1.jpg",
     alt: "Sunset dinner on yacht deck",
-    span: "md:col-span-2",
+    span: "md:col-span-2 md:row-span-2",
   },
   {
     src: "/images/gallery-2.jpg",
@@ -22,7 +22,7 @@ const galleryImages = [
   {
     src: "/images/gallery-4.jpg",
     alt: "Wellness moment on yacht bow",
-    span: "md:col-span-2",
+    span: "",
   },
   {
     src: "/images/gallery-5.jpg",
@@ -49,13 +49,13 @@ export function Gallery() {
           </p>
         </ScrollAnimation>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[200px] md:auto-rows-[250px] gap-4">
           {galleryImages.map((image, index) => (
             <ScrollAnimation
               key={image.src}
               animation="scale-in"
               delay={index * 100}
-              className={`relative aspect-square overflow-hidden rounded-lg group ${image.span}`}
+              className={`relative overflow-hidden rounded-lg group ${image.span}`}
             >
               <Image
                 src={image.src}

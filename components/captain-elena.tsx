@@ -30,10 +30,8 @@ export function CaptainElena() {
               </h2>
               <p className="text-charcoal/80 leading-relaxed">
                 Captain Elena Voss has navigated the world&apos;s most pristine waters
-                for over two decades. With a background in hospitality and a
-                passion for creating meaningful connections, she founded Lumina
-                to share her love of the sea with those seeking something
-                extraordinary.
+                for over two decades, combining maritime expertise with a passion
+                for creating meaningful connections.
               </p>
               <p className="text-charcoal/80 leading-relaxed">
                 Every voyage is personally overseen by Elena, ensuring each guest

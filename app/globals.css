@@ -4,34 +4,36 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Lumina Yacht Experiences - Design Tokens */
-  --background: #F5F3F0;
-  --foreground: #0A1628;
-  --card: #FFFFFF;
-  --card-foreground: #0A1628;
-  --popover: #FFFFFF;
-  --popover-foreground: #0A1628;
-  --primary: #D4AF37;
-  --primary-foreground: #0A1628;
-  --secondary: #F5F3F0;
-  --secondary-foreground: #0A1628;
-  --muted: #8B8B8B;
-  --muted-foreground: #F5F3F0;
-  --accent: #D4AF37;
-  --accent-foreground: #0A1628;
-  --destructive: #ef4444;
-  --destructive-foreground: #fafafa;
-  --border: #E8E6E1;
-  --input: #FFFFFF;
-  --ring: #D4AF37;
-  --radius: 0.5rem;
+  /* Lumina Yacht Experiences - Soft Elegant Design Tokens */
+  --background: #F7F5F2;
+  --foreground: #1E3A5F;
+  --card: #FDFCFA;
+  --card-foreground: #1E3A5F;
+  --popover: #FDFCFA;
+  --popover-foreground: #1E3A5F;
+  --primary: #C9A961;
+  --primary-foreground: #1E3A5F;
+  --secondary: #EAE6DD;
+  --secondary-foreground: #1E3A5F;
+  --muted: #9EA8B3;
+  --muted-foreground: #F7F5F2;
+  --accent: #C9A961;
+  --accent-foreground: #1E3A5F;
+  --destructive: #C54B4B;
+  --destructive-foreground: #FDFCFA;
+  --border: #DDD8CF;
+  --input: #FDFCFA;
+  --ring: #C9A961;
+  --radius: 0.625rem;
 
-  /* Custom Lumina tokens */
-  --navy: #0A1628;
-  --cream: #F5F3F0;
-  --gold: #D4AF37;
-  --gray: #8B8B8B;
-  --charcoal: #2A2A2A;
+  /* Custom Lumina tokens - softer palette */
+  --navy: #1E3A5F;
+  --cream: #F7F5F2;
+  --gold: #C9A961;
+  --gray: #9EA8B3;
+  --charcoal: #3D4F5F;
+  --sand: #EAE6DD;
+  --ocean: #4A6B8A;
 }
 
 @theme inline {
@@ -61,12 +63,13 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  /* Lumina custom colors */
   --color-navy: var(--navy);
   --color-cream: var(--cream);
   --color-gold: var(--gold);
   --color-gray: var(--gray);
   --color-charcoal: var(--charcoal);
+  --color-sand: var(--sand);
+  --color-ocean: var(--ocean);
 }
 
 @layer base {

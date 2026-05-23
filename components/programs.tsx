@@ -61,12 +61,14 @@ export function Programs() {
                   <p className="text-charcoal/70 text-sm leading-relaxed">
                     {program.description}
                   </p>
-                  <a
-                    href="#"
-                    className="inline-block mt-4 text-gold text-sm font-medium hover:underline"
+                  <button
+                    className="inline-flex items-center gap-2 mt-4 text-gold text-sm font-medium hover:text-gold/80 transition-colors group/btn"
                   >
                     Discover More
-                  </a>
+                    <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </ScrollAnimation>
