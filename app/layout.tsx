@@ -7,6 +7,8 @@ import './globals.css'
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Lumina Yacht Experiences | Luxury Yacht Voyages',
   description: 'Escape the ordinary. Luxury yacht voyages curated for extraordinary experiences. Signature collections, bespoke journeys, and wellness retreats.',
