@@ -9,26 +9,38 @@
       .foreground { fill: #0A1628; }
     }
   </style>
-  <g clip-path="url(#clip0_anchor)">
+  <g clip-path="url(#clip0_compass)">
     <rect class="background" width="180" height="180" rx="37" />
-    <!-- Anchor icon -->
-    <g style="transform: scale(85%); transform-origin: center">
-      <!-- Anchor ring -->
-      <circle cx="90" cy="55" r="22" class="foreground" fill="none" stroke-width="8"/>
-      <!-- Vertical stem -->
-      <path d="M90 77V140" class="foreground" stroke-width="8" stroke-linecap="round"/>
-      <!-- Crossbar -->
-      <path d="M55 105H125" class="foreground" stroke-width="6" stroke-linecap="round"/>
-      <!-- Left fluke -->
-      <path d="M55 140L90 115" class="foreground" stroke-width="8" stroke-linecap="round" fill="none"/>
-      <!-- Right fluke -->
-      <path d="M125 140L90 115" class="foreground" stroke-width="8" stroke-linecap="round" fill="none"/>
-      <!-- Bottom point -->
-      <path d="M69 155L90 175L111 155" class="foreground" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    </g>
+    <!-- Outer ring circles -->
+    <circle cx="90" cy="90" r="72" class="foreground" fill="none" stroke-width="3" opacity="0.8"/>
+    <circle cx="90" cy="90" r="65" class="foreground" fill="none" stroke-width="2" opacity="0.6"/>
+
+    <!-- Main compass star -->
+    <!-- North point (top) - filled -->
+    <polygon points="90,25 95,55 85,55" class="foreground" fill-opacity="0.9"/>
+    <!-- South point (bottom) - outlined -->
+    <polygon points="90,155 100,125 80,125" class="foreground" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- East point (right) - filled -->
+    <polygon points="155,90 125,95 125,85" class="foreground" fill-opacity="0.9"/>
+    <!-- West point (left) - outlined -->
+    <polygon points="25,90 55,100 55,80" class="foreground" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Secondary points (NE, SE, SW, NW) -->
+    <!-- NE -->
+    <polygon points="125,55 110,75 100,65" class="foreground" fill-opacity="0.6"/>
+    <!-- SE -->
+    <polygon points="125,125 115,105 105,115" class="foreground" fill-opacity="0.6"/>
+    <!-- SW -->
+    <polygon points="55,125 75,115 65,105" class="foreground" fill-opacity="0.6"/>
+    <!-- NW -->
+    <polygon points="55,55 65,75 75,65" class="foreground" fill-opacity="0.6"/>
+
+    <!-- Center circle -->
+    <circle cx="90" cy="90" r="8" class="foreground" fill-opacity="0.9"/>
+    <circle cx="90" cy="90" r="4" class="background" fill-opacity="0.9"/>
   </g>
   <defs>
-    <clipPath id="clip0_anchor">
+    <clipPath id="clip0_compass">
       <rect width="180" height="180" fill="white"/>
     </clipPath>
   </defs>
