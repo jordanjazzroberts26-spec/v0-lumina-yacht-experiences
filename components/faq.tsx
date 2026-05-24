@@ -48,29 +48,29 @@ interface FAQProps {
 
 export function FAQ({ onOpenModal }: FAQProps) {
   return (
-    <section id="faq" className="py-24 px-6 lg:px-12 bg-cream">
-      <div className="max-w-3xl mx-auto">
-        <ScrollAnimation animation="fade-up" className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-navy mb-4">
+    <section id="faq" className="py-32 px-6 lg:px-12 bg-cream">
+      <div className="max-w-4xl mx-auto">
+        <ScrollAnimation animation="fade-up" className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-navy mb-6">
             Frequently Asked Questions
           </h2>
-          <p className="text-charcoal/70 text-lg">
+          <p className="text-charcoal/70 text-xl md:text-2xl">
             Everything you need to know about your voyage
           </p>
         </ScrollAnimation>
 
         <ScrollAnimation animation="fade-up" delay={200}>
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-5">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card rounded-lg px-6 border border-border"
+                className="bg-card rounded-xl px-8 border border-border"
               >
-                <AccordionTrigger className="text-left text-navy font-medium hover:text-gold transition-colors py-5 text-lg">
+                <AccordionTrigger className="text-left text-navy font-medium hover:text-gold transition-colors py-7 text-xl md:text-2xl">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-charcoal/80 leading-relaxed pb-5 text-base">
+                <AccordionContent className="text-charcoal/80 leading-relaxed pb-7 text-lg md:text-xl">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -78,13 +78,14 @@ export function FAQ({ onOpenModal }: FAQProps) {
           </Accordion>
         </ScrollAnimation>
 
-        <ScrollAnimation animation="fade-up" delay={400} className="text-center mt-12">
-          <p className="text-charcoal/70 mb-4 text-lg">
+        <ScrollAnimation animation="fade-up" delay={400} className="text-center mt-16">
+          <p className="text-charcoal/70 mb-6 text-xl">
             Have more questions? We would love to hear from you.
           </p>
           <Button
             onClick={onOpenModal}
-            className="bg-gold text-navy font-medium hover:bg-gold/90 transition-all duration-300"
+            size="lg"
+            className="bg-gold text-navy font-medium hover:bg-gold/90 transition-all duration-300 text-lg px-8"
           >
             Speak with Elena
           </Button>
