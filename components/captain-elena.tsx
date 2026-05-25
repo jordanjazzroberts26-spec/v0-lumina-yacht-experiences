@@ -33,11 +33,6 @@ export function CaptainElena() {
                 for over two decades, combining maritime expertise with a passion
                 for creating meaningful connections.
               </p>
-              <p className="text-body leading-relaxed">
-                Every voyage is personally overseen by Elena, ensuring each guest
-                experiences the perfect blend of adventure, relaxation, and
-                unforgettable moments.
-              </p>
               <blockquote className="border-l-4 border-gold pl-6 italic text-ink text-lg">
                 &quot;It&apos;s never about the boat. It&apos;s about what happens when the
                 right people, the right food, the right music, and the right
