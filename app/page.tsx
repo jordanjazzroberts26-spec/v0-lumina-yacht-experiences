@@ -16,15 +16,26 @@ import { ExperienceModal } from "@/components/experience-modal"
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedProgram, setSelectedProgram] = useState("")
 
-  const openModal = () => setIsModalOpen(true)
-  const closeModal = () => setIsModalOpen(false)
+  const openModal = () => {
+    setSelectedProgram("")
+    setIsModalOpen(true)
+  }
+  const openModalWithProgram = (program: string) => {
+    setSelectedProgram(program)
+    setIsModalOpen(true)
+  }
+  const closeModal = () => {
+    setIsModalOpen(false)
+    setSelectedProgram("")
+  }
 
   return (
     <main className="min-h-screen">
       <Navbar onOpenModal={openModal} />
       <Hero onOpenModal={openModal} />
-      <Programs />
+      <Programs onDiscoverMore={openModalWithProgram} />
       <CaptainElena />
       <Gallery />
       <Testimonials />
@@ -33,7 +44,11 @@ export default function Home() {
       <FAQ onOpenModal={openModal} />
       <FinalCTA onOpenModal={openModal} />
       <Footer />
-      <ExperienceModal isOpen={isModalOpen} onClose={closeModal} />
+      <ExperienceModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        initialProgram={selectedProgram}
+      />
     </main>
   )
 }

@@ -48,13 +48,13 @@ interface FAQProps {
 
 export function FAQ({ onOpenModal }: FAQProps) {
   return (
-    <section id="faq" className="py-32 px-6 lg:px-12 bg-cream">
+    <section id="faq" className="py-32 px-6 lg:px-12 bg-pearl">
       <div className="max-w-4xl mx-auto">
         <ScrollAnimation animation="fade-up" className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-navy mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-ink mb-6">
             Frequently Asked Questions
           </h2>
-          <p className="text-charcoal/70 text-xl md:text-2xl">
+          <p className="text-body text-xl md:text-2xl">
             Everything you need to know about your voyage
           </p>
         </ScrollAnimation>
@@ -67,10 +67,10 @@ export function FAQ({ onOpenModal }: FAQProps) {
                 value={`item-${index}`}
                 className="bg-card rounded-xl px-8 border border-border"
               >
-                <AccordionTrigger className="text-left text-navy font-medium hover:text-gold transition-colors py-7 text-xl md:text-2xl">
+                <AccordionTrigger className="text-left text-ink font-medium hover:text-gold transition-colors py-7 text-xl md:text-2xl">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-charcoal/80 leading-relaxed pb-7 text-lg md:text-xl">
+                <AccordionContent className="text-body leading-relaxed pb-7 text-lg md:text-xl">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -79,13 +79,13 @@ export function FAQ({ onOpenModal }: FAQProps) {
         </ScrollAnimation>
 
         <ScrollAnimation animation="fade-up" delay={400} className="text-center mt-16">
-          <p className="text-charcoal/70 mb-6 text-xl">
+          <p className="text-body mb-6 text-xl">
             Have more questions? We would love to hear from you.
           </p>
           <Button
             onClick={onOpenModal}
             size="lg"
-            className="bg-gold text-navy font-medium hover:bg-gold/90 transition-all duration-300 text-lg px-8"
+            className="bg-gold text-ink font-semibold hover:bg-gold/90 shadow-soft transition-all duration-300 text-lg px-8"
           >
             Speak with Elena
           </Button>

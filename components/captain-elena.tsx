@@ -25,20 +25,20 @@ export function CaptainElena() {
           {/* Content */}
           <ScrollAnimation animation="fade-up" delay={200}>
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-navy">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-ink">
                 Meet Your Captain
               </h2>
-              <p className="text-charcoal/80 leading-relaxed">
+              <p className="text-body leading-relaxed">
                 Captain Elena Voss has navigated the world&apos;s most pristine waters
                 for over two decades, combining maritime expertise with a passion
                 for creating meaningful connections.
               </p>
-              <p className="text-charcoal/80 leading-relaxed">
+              <p className="text-body leading-relaxed">
                 Every voyage is personally overseen by Elena, ensuring each guest
                 experiences the perfect blend of adventure, relaxation, and
                 unforgettable moments.
               </p>
-              <blockquote className="border-l-4 border-gold pl-6 italic text-navy text-lg">
+              <blockquote className="border-l-4 border-gold pl-6 italic text-ink text-lg">
                 &quot;It&apos;s never about the boat. It&apos;s about what happens when the
                 right people, the right food, the right music, and the right
                 ocean come together exactly the way you dreamed.&quot;
@@ -46,7 +46,7 @@ export function CaptainElena() {
               <Link href="/contact">
                 <Button
                   variant="outline"
-                  className="border-navy text-navy hover:bg-navy hover:text-cream transition-all duration-300 mt-4"
+                  className="border-ink/30 text-ink hover:bg-ink hover:text-moonlight transition-all duration-300 mt-4"
                 >
                   Contact Captain Elena
                 </Button>

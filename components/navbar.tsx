@@ -32,7 +32,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-navy/95 backdrop-blur-sm shadow-lg"
+          ? "bg-twilight-deep/92 backdrop-blur-sm shadow-soft"
           : "bg-transparent"
       }`}
     >
@@ -41,7 +41,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
         <Link href="/" className="flex items-center gap-2">
           <span
             className={`text-xl font-semibold tracking-wide transition-colors duration-300 ${
-              isScrolled ? "text-cream" : "text-cream"
+              isScrolled ? "text-moonlight" : "text-moonlight"
             }`}
           >
             LUMINA
@@ -55,7 +55,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
               key={link.href}
               href={link.href}
               className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:text-gold ${
-                isScrolled ? "text-cream/80" : "text-cream/80"
+                isScrolled ? "text-moonlight/85" : "text-moonlight/85"
               }`}
             >
               {link.label}
@@ -67,7 +67,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
         <div className="hidden md:block">
           <Button
             onClick={onOpenModal}
-            className="bg-gold text-navy font-medium hover:bg-gold/90 transition-all duration-300"
+            className="bg-gold text-ink font-semibold hover:bg-gold/90 shadow-soft transition-all duration-300"
           >
             Craft Your Experience
           </Button>
@@ -75,7 +75,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="text-cream md:hidden"
+          className="text-moonlight md:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -85,13 +85,13 @@ export function Navbar({ onOpenModal }: NavbarProps) {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="bg-navy/95 backdrop-blur-sm md:hidden">
+        <div className="bg-twilight-deep/92 backdrop-blur-sm md:hidden">
           <div className="flex flex-col gap-4 px-6 py-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-cream/80 text-sm font-medium tracking-wide hover:text-gold transition-colors"
+                className="text-moonlight/85 text-sm font-medium tracking-wide hover:text-gold transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
@@ -102,7 +102,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                 setIsMobileMenuOpen(false)
                 onOpenModal()
               }}
-              className="bg-gold text-navy font-medium hover:bg-gold/90 mt-2"
+              className="bg-gold text-ink font-semibold hover:bg-gold/90 mt-2"
             >
               Craft Your Experience
             </Button>

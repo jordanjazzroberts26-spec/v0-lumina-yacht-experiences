@@ -3,20 +3,27 @@
 import Image from "next/image"
 import { ScrollAnimation } from "@/lib/animations"
 
+interface ProgramsProps {
+  onDiscoverMore: (program: string) => void
+}
+
 const programs = [
   {
+    slug: "signature",
     title: "Signature Collection",
     description:
       "Multi-day voyages with curated experiences, guided activities, and moments designed to inspire. Perfect for those seeking a complete luxury escape.",
     image: "/images/program-signature.jpg",
   },
   {
+    slug: "bespoke",
     title: "Bespoke Journeys",
     description:
       "Fully customized private charters with bespoke itineraries crafted around your preferences. Your vision, our expertise.",
     image: "/images/program-bespoke.jpg",
   },
   {
+    slug: "wellness",
     title: "Wellness Retreats",
     description:
       "Holistic experience-focused voyages featuring yoga, meditation, organic cuisine, and rejuvenation on the open sea.",
@@ -24,15 +31,15 @@ const programs = [
   },
 ]
 
-export function Programs() {
+export function Programs({ onDiscoverMore }: ProgramsProps) {
   return (
-    <section id="programs" className="py-24 px-6 lg:px-12 bg-cream">
+    <section id="programs" className="py-24 px-6 lg:px-12 bg-pearl">
       <div className="max-w-7xl mx-auto">
         <ScrollAnimation animation="fade-up" className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-navy mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-ink mb-4">
             Three Curated Experiences
           </h2>
-          <p className="text-charcoal/70 max-w-2xl mx-auto">
+          <p className="text-body max-w-2xl mx-auto">
             Each program is thoughtfully designed to create unforgettable moments
             on the water
           </p>
@@ -45,7 +52,7 @@ export function Programs() {
               animation="fade-up"
               delay={index * 200}
             >
-              <div className="group bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+              <div className="group bg-card rounded-lg overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-300">
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     src={program.image}
@@ -55,13 +62,15 @@ export function Programs() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-navy mb-3">
+                  <h3 className="text-xl font-semibold text-ink mb-3">
                     {program.title}
                   </h3>
-                  <p className="text-charcoal/70 text-sm leading-relaxed">
+                  <p className="text-body text-sm leading-relaxed">
                     {program.description}
                   </p>
                   <button
+                    type="button"
+                    onClick={() => onDiscoverMore(program.slug)}
                     className="inline-flex items-center gap-2 mt-4 text-gold text-sm font-medium hover:text-gold/80 transition-colors group/btn"
                   >
                     Discover More

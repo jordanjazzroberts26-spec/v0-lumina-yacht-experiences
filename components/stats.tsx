@@ -47,17 +47,17 @@ function StatCounter({
         {count}
         {suffix}
       </div>
-      <p className="text-cream/70 text-sm md:text-base">{label}</p>
+      <p className="text-moonlight/80 text-sm md:text-base">{label}</p>
     </div>
   )
 }
 
 export function Stats() {
   return (
-    <section className="py-24 px-6 lg:px-12 bg-navy">
+    <section className="py-24 px-6 lg:px-12 bg-twilight">
       <div className="max-w-7xl mx-auto">
         <ScrollAnimation animation="fade-up" className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-cream mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-moonlight mb-4">
             By The Numbers
           </h2>
         </ScrollAnimation>

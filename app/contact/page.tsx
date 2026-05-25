@@ -37,13 +37,13 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-navy">
+    <main className="min-h-screen bg-twilight">
       {/* Back Link */}
       <div className="px-6 lg:px-12 pt-8">
         <div className="max-w-6xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-cream/60 hover:text-gold transition-colors text-sm"
+            className="inline-flex items-center gap-2 text-moonlight/60 hover:text-gold transition-colors text-sm"
           >
             <ArrowLeft size={16} />
             Back to Home
@@ -58,10 +58,10 @@ export default function ContactPage() {
             <p className="text-gold text-sm tracking-widest uppercase mb-3">
               Get in Touch
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-cream mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-moonlight mb-4">
               Contact Captain Elena
             </h1>
-            <p className="text-cream/60 max-w-xl text-lg">
+            <p className="text-moonlight/60 max-w-xl text-lg">
               Have questions about our yacht experiences or want to discuss if a voyage 
               is right for you? Reach out directly and I&apos;ll get back to you within 24 hours.
             </p>
@@ -72,27 +72,27 @@ export default function ContactPage() {
             <ScrollAnimation animation="fade-up" delay={200}>
               <div className="space-y-4">
                 {/* Email Card */}
-                <div className="bg-cream/5 border border-cream/10 rounded-lg p-5">
+                <div className="bg-moonlight/5 border border-moonlight/10 rounded-lg p-5">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
                       <Mail className="text-gold" size={18} />
                     </div>
                     <div>
-                      <h3 className="font-medium text-cream mb-1">Email</h3>
-                      <p className="text-cream/60 text-sm">captain@luminayachts.com</p>
+                      <h3 className="font-medium text-moonlight mb-1">Email</h3>
+                      <p className="text-moonlight/60 text-sm">captain@luminayachts.com</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Direct Access Card */}
-                <div className="bg-cream/5 border border-cream/10 rounded-lg p-5">
+                <div className="bg-moonlight/5 border border-moonlight/10 rounded-lg p-5">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
                       <MessageCircle className="text-gold" size={18} />
                     </div>
                     <div>
-                      <h3 className="font-medium text-cream mb-1">Direct Access</h3>
-                      <p className="text-cream/60 text-sm">
+                      <h3 className="font-medium text-moonlight mb-1">Direct Access</h3>
+                      <p className="text-moonlight/60 text-sm">
                         Program members get 24/7 access via text and voice memo
                       </p>
                     </div>
@@ -100,14 +100,14 @@ export default function ContactPage() {
                 </div>
 
                 {/* Response Time Card */}
-                <div className="bg-cream/5 border border-cream/10 rounded-lg p-5">
+                <div className="bg-moonlight/5 border border-moonlight/10 rounded-lg p-5">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
                       <Clock className="text-gold" size={18} />
                     </div>
                     <div>
-                      <h3 className="font-medium text-cream mb-1">Response Time</h3>
-                      <p className="text-cream/60 text-sm">
+                      <h3 className="font-medium text-moonlight mb-1">Response Time</h3>
+                      <p className="text-moonlight/60 text-sm">
                         I personally respond to all inquiries within 24 hours
                       </p>
                     </div>
@@ -124,17 +124,17 @@ export default function ContactPage() {
                     <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mb-4">
                       <Check className="text-gold" size={32} />
                     </div>
-                    <h3 className="text-2xl font-semibold text-cream mb-2">
+                    <h3 className="text-2xl font-semibold text-moonlight mb-2">
                       Message Sent
                     </h3>
-                    <p className="text-cream/60">
+                    <p className="text-moonlight/60">
                       Captain Elena will respond within 24 hours to discuss your voyage.
                     </p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="space-y-2">
-                      <Label htmlFor="name" className="text-cream/80 text-sm">
+                      <Label htmlFor="name" className="text-moonlight/80 text-sm">
                         Name
                       </Label>
                       <Input
@@ -145,12 +145,12 @@ export default function ContactPage() {
                           setFormData({ ...formData, name: e.target.value })
                         }
                         required
-                        className="bg-cream/5 border-cream/10 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:ring-gold/20"
+                        className="bg-moonlight/5 border-moonlight/10 text-moonlight placeholder:text-moonlight/40 focus:border-gold/50 focus:ring-gold/20"
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="email" className="text-cream/80 text-sm">
+                      <Label htmlFor="email" className="text-moonlight/80 text-sm">
                         Email
                       </Label>
                       <Input
@@ -162,12 +162,12 @@ export default function ContactPage() {
                           setFormData({ ...formData, email: e.target.value })
                         }
                         required
-                        className="bg-cream/5 border-cream/10 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:ring-gold/20"
+                        className="bg-moonlight/5 border-moonlight/10 text-moonlight placeholder:text-moonlight/40 focus:border-gold/50 focus:ring-gold/20"
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message" className="text-cream/80 text-sm">
+                      <Label htmlFor="message" className="text-moonlight/80 text-sm">
                         Message
                       </Label>
                       <Textarea
@@ -179,13 +179,13 @@ export default function ContactPage() {
                           setFormData({ ...formData, message: e.target.value })
                         }
                         required
-                        className="bg-cream/5 border-cream/10 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:ring-gold/20 resize-none"
+                        className="bg-moonlight/5 border-moonlight/10 text-moonlight placeholder:text-moonlight/40 focus:border-gold/50 focus:ring-gold/20 resize-none"
                       />
                     </div>
 
                     <Button
                       type="submit"
-                      className="w-full bg-gold text-navy font-medium hover:bg-gold/90 transition-all duration-300"
+                      className="w-full bg-gold text-ink font-semibold hover:bg-gold/90 shadow-soft transition-all duration-300"
                     >
                       Send Message
                     </Button>
@@ -193,7 +193,7 @@ export default function ContactPage() {
                 )}
 
                 {/* Privacy Note */}
-                <p className="text-cream/40 text-xs text-center mt-6">
+                <p className="text-moonlight/40 text-xs text-center mt-6">
                   Your information is kept confidential and never shared.
                 </p>
               </div>

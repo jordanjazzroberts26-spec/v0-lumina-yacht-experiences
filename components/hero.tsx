@@ -23,19 +23,19 @@ export function Hero({ onOpenModal }: HeroProps) {
           quality={90}
         />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-twilight-deep/55 via-twilight/40 to-twilight-deep/65" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <ScrollAnimation animation="fade-up" delay={200}>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-cream mb-6 leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-moonlight mb-6 leading-tight tracking-tight">
             Escape the Ordinary
           </h1>
         </ScrollAnimation>
 
         <ScrollAnimation animation="fade-up" delay={400}>
-          <p className="text-lg md:text-xl text-cream/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-moonlight/90 mb-8 max-w-2xl mx-auto leading-relaxed">
             Luxury yacht voyages curated for extraordinary experiences
           </p>
         </ScrollAnimation>
@@ -44,7 +44,7 @@ export function Hero({ onOpenModal }: HeroProps) {
           <Button
             onClick={onOpenModal}
             size="lg"
-            className="bg-gold text-navy font-medium hover:bg-gold/90 transition-all duration-300 px-8 py-6 text-base"
+            className="bg-gold text-ink font-semibold hover:bg-gold/90 shadow-soft transition-all duration-300 px-8 py-6 text-base"
           >
             Explore Voyages
           </Button>
@@ -53,7 +53,7 @@ export function Hero({ onOpenModal }: HeroProps) {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ChevronDown className="text-cream/60" size={32} />
+        <ChevronDown className="text-moonlight/70" size={32} />
       </div>
     </section>
   )

@@ -17,9 +17,14 @@ import {
 interface ExperienceModalProps {
   isOpen: boolean
   onClose: () => void
+  initialProgram?: string
 }
 
-export function ExperienceModal({ isOpen, onClose }: ExperienceModalProps) {
+export function ExperienceModal({
+  isOpen,
+  onClose,
+  initialProgram = "",
+}: ExperienceModalProps) {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
@@ -43,6 +48,12 @@ export function ExperienceModal({ isOpen, onClose }: ExperienceModalProps) {
       document.body.style.overflow = "unset"
     }
   }, [isOpen, onClose])
+
+  useEffect(() => {
+    if (isOpen && initialProgram) {
+      setFormData((prev) => ({ ...prev, program: initialProgram }))
+    }
+  }, [isOpen, initialProgram])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -71,16 +82,16 @@ export function ExperienceModal({ isOpen, onClose }: ExperienceModalProps) {
     >
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-navy/80 backdrop-blur-sm animate-fade-in"
+        className="absolute inset-0 bg-twilight-deep/75 backdrop-blur-sm animate-fade-in"
         onClick={onClose}
       />
 
       {/* Modal Content */}
-      <div className="relative w-full max-w-lg bg-cream rounded-lg shadow-2xl animate-scale-in max-h-[90vh] overflow-y-auto">
+      <div className="relative w-full max-w-lg bg-ivory rounded-lg shadow-soft-lg animate-scale-in max-h-[90vh] overflow-y-auto">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-charcoal/60 hover:text-charcoal transition-colors"
+          className="absolute top-4 right-4 text-whisper hover:text-ink transition-colors"
           aria-label="Close modal"
         >
           <X size={24} />
@@ -92,27 +103,27 @@ export function ExperienceModal({ isOpen, onClose }: ExperienceModalProps) {
               <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mb-4">
                 <Check className="text-gold" size={32} />
               </div>
-              <h3 className="text-2xl font-semibold text-navy mb-2">
+              <h3 className="text-2xl font-semibold text-ink mb-2">
                 Request Received
               </h3>
-              <p className="text-charcoal/70">
+              <p className="text-body">
                 Captain Elena will be in touch within 24 hours to craft your
                 perfect voyage.
               </p>
             </div>
           ) : (
             <>
-              <h2 className="text-2xl font-semibold text-navy mb-2">
+              <h2 className="text-2xl font-semibold text-ink mb-2">
                 Craft Your Private Experience
               </h2>
-              <p className="text-charcoal/70 mb-6">
+              <p className="text-body mb-6">
                 Share your vision, and we will create something extraordinary.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-navy">
+                    <Label htmlFor="name" className="text-ink">
                       Name
                     </Label>
                     <Input
@@ -126,7 +137,7 @@ export function ExperienceModal({ isOpen, onClose }: ExperienceModalProps) {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-navy">
+                    <Label htmlFor="email" className="text-ink">
                       Email
                     </Label>
                     <Input
@@ -144,7 +155,7 @@ export function ExperienceModal({ isOpen, onClose }: ExperienceModalProps) {
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="dates" className="text-navy">
+                    <Label htmlFor="dates" className="text-ink">
                       Preferred Dates
                     </Label>
                     <Input
@@ -158,7 +169,7 @@ export function ExperienceModal({ isOpen, onClose }: ExperienceModalProps) {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="guests" className="text-navy">
+                    <Label htmlFor="guests" className="text-ink">
                       Number of Guests
                     </Label>
                     <Input
@@ -176,7 +187,7 @@ export function ExperienceModal({ isOpen, onClose }: ExperienceModalProps) {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="program" className="text-navy">
+                  <Label htmlFor="program" className="text-ink">
                     Preferred Program
                   </Label>
                   <Select
@@ -199,7 +210,7 @@ export function ExperienceModal({ isOpen, onClose }: ExperienceModalProps) {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="requests" className="text-navy">
+                  <Label htmlFor="requests" className="text-ink">
                     Special Requests
                   </Label>
                   <Textarea
@@ -216,7 +227,7 @@ export function ExperienceModal({ isOpen, onClose }: ExperienceModalProps) {
 
                 <Button
                   type="submit"
-                  className="w-full bg-gold text-navy font-medium hover:bg-gold/90 transition-all duration-300 mt-4"
+                  className="w-full bg-gold text-ink font-semibold hover:bg-gold/90 shadow-soft transition-all duration-300 mt-4"
                 >
                   Plan My Voyage
                 </Button>

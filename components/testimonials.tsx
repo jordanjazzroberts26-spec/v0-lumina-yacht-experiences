@@ -36,10 +36,10 @@ export function Testimonials() {
     <section className="py-24 px-6 lg:px-12 bg-secondary">
       <div className="max-w-7xl mx-auto">
         <ScrollAnimation animation="fade-up" className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-navy mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-ink mb-4">
             What Our Guests Say
           </h2>
-          <p className="text-charcoal/70 max-w-2xl mx-auto">
+          <p className="text-body max-w-2xl mx-auto">
             Stories from those who have experienced the Lumina difference
           </p>
         </ScrollAnimation>
@@ -51,7 +51,7 @@ export function Testimonials() {
               animation="fade-up"
               delay={index * 200}
             >
-              <div className="bg-card rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="bg-card rounded-lg p-8 shadow-soft hover:shadow-soft-lg transition-shadow duration-300">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="relative w-16 h-16 rounded-full overflow-hidden">
                     <Image
@@ -62,10 +62,10 @@ export function Testimonials() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-navy">
+                    <h4 className="font-semibold text-ink">
                       {testimonial.name}
                     </h4>
-                    <p className="text-gray text-sm">{testimonial.location}</p>
+                    <p className="text-whisper text-sm">{testimonial.location}</p>
                   </div>
                 </div>
                 <div className="flex gap-1 mb-4">
@@ -77,7 +77,7 @@ export function Testimonials() {
                     />
                   ))}
                 </div>
-                <p className="text-charcoal/80 leading-relaxed italic">
+                <p className="text-body leading-relaxed italic">
                   &quot;{testimonial.quote}&quot;
                 </p>
               </div>

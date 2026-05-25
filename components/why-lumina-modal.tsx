@@ -60,16 +60,16 @@ export function WhyLuminaModal({ isOpen, onClose }: WhyLuminaModalProps) {
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-navy/90 backdrop-blur-sm"
+        className="absolute inset-0 bg-twilight-deep/80 backdrop-blur-sm"
         onClick={onClose}
       />
 
       {/* Modal */}
-      <div className="relative bg-cream w-full max-w-2xl max-h-[90vh] overflow-y-auto mx-4 rounded-lg shadow-2xl animate-fade-up">
+      <div className="relative bg-ivory w-full max-w-2xl max-h-[90vh] overflow-y-auto mx-4 rounded-lg shadow-soft-lg animate-fade-up">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-charcoal/60 hover:text-navy transition-colors z-10"
+          className="absolute top-4 right-4 text-whisper hover:text-ink transition-colors z-10"
         >
           <X size={24} />
         </button>
@@ -79,10 +79,10 @@ export function WhyLuminaModal({ isOpen, onClose }: WhyLuminaModalProps) {
           <p className="text-gold text-sm tracking-widest uppercase mb-3">
             The Lumina Difference
           </p>
-          <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-6">
+          <h2 className="text-2xl md:text-3xl font-semibold text-ink mb-6">
             Why Choose Lumina
           </h2>
-          <p className="text-charcoal/70 mb-8">
+          <p className="text-body mb-8">
             Discover what sets a Lumina voyage apart from ordinary yacht charters.
           </p>
 
@@ -91,14 +91,14 @@ export function WhyLuminaModal({ isOpen, onClose }: WhyLuminaModalProps) {
             {reasons.map((reason, index) => (
               <div
                 key={index}
-                className="flex gap-4 p-4 rounded-lg bg-navy/5 border border-navy/10"
+                className="flex gap-4 p-4 rounded-lg bg-sand/80 border border-mist"
               >
                 <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
                   <reason.icon className="text-gold" size={18} />
                 </div>
                 <div>
-                  <h3 className="font-medium text-navy mb-1">{reason.title}</h3>
-                  <p className="text-charcoal/60 text-sm leading-relaxed">
+                  <h3 className="font-medium text-ink mb-1">{reason.title}</h3>
+                  <p className="text-body text-sm leading-relaxed">
                     {reason.description}
                   </p>
                 </div>
@@ -107,13 +107,13 @@ export function WhyLuminaModal({ isOpen, onClose }: WhyLuminaModalProps) {
           </div>
 
           {/* Footer */}
-          <div className="mt-8 pt-6 border-t border-navy/10 text-center">
-            <p className="text-charcoal/60 text-sm mb-4">
+          <div className="mt-8 pt-6 border-t border-mist text-center">
+            <p className="text-whisper text-sm mb-4">
               Ready to experience the difference?
             </p>
             <Button
               onClick={onClose}
-              className="bg-gold text-navy font-medium hover:bg-gold/90 transition-all duration-300"
+              className="bg-gold text-ink font-semibold hover:bg-gold/90 shadow-soft transition-all duration-300"
             >
               Close
             </Button>

@@ -10,16 +10,16 @@ interface FinalCTAProps {
 
 export function FinalCTA({ onOpenModal, onOpenWhyModal }: FinalCTAProps) {
   return (
-    <section className="py-24 px-6 lg:px-12 bg-gradient-to-b from-cream to-secondary">
+    <section className="py-24 px-6 lg:px-12 bg-gradient-to-b from-pearl via-sand/50 to-sand">
       <div className="max-w-3xl mx-auto text-center">
         <ScrollAnimation animation="fade-up">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-navy mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-ink mb-6">
             Craft Your Private Experience
           </h2>
         </ScrollAnimation>
 
         <ScrollAnimation animation="fade-up" delay={200}>
-          <p className="text-charcoal/70 text-lg mb-8 leading-relaxed">
+          <p className="text-body text-lg mb-8 leading-relaxed">
             Every voyage begins with a conversation. Share your vision, and let
             us create something extraordinary—tailored to your dreams, your
             pace, your perfect escape.
@@ -31,14 +31,14 @@ export function FinalCTA({ onOpenModal, onOpenWhyModal }: FinalCTAProps) {
             <Button
               onClick={onOpenModal}
               size="lg"
-              className="bg-gold text-navy font-medium hover:bg-gold/90 transition-all duration-300 px-10 py-6 text-lg"
+              className="bg-gold text-ink font-semibold hover:bg-gold/90 shadow-soft transition-all duration-300 px-10 py-6 text-lg"
             >
               Plan My Voyage
             </Button>
             {onOpenWhyModal && (
               <button
                 onClick={onOpenWhyModal}
-                className="text-charcoal/60 hover:text-navy underline underline-offset-4 transition-colors text-sm"
+                className="text-whisper hover:text-ocean underline underline-offset-4 transition-colors text-sm"
               >
                 Why Lumina
               </button>

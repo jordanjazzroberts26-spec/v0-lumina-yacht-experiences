@@ -3,37 +3,62 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Lumina — Sunset Harbor palette
+ * Warm pearl surfaces, harbor-blue typography, champagne CTAs.
+ * Designed for comfortable reading with enough contrast to convert.
+ *
+ * Surfaces:  pearl · ivory · sand · mist
+ * Type:      ink (headings) · body · whisper
+ * Accents:   champagne · ocean
+ * Depth:     twilight · twilight-deep · moonlight (on dark)
+ */
 :root {
-  /* Lumina Yacht Experiences - Soft Elegant Design Tokens */
-  --background: #F7F5F2;
-  --foreground: #1E3A5F;
-  --card: #FDFCFA;
-  --card-foreground: #1E3A5F;
-  --popover: #FDFCFA;
-  --popover-foreground: #1E3A5F;
-  --primary: #C9A961;
-  --primary-foreground: #1E3A5F;
-  --secondary: #EAE6DD;
-  --secondary-foreground: #1E3A5F;
-  --muted: #9EA8B3;
-  --muted-foreground: #F7F5F2;
-  --accent: #C9A961;
-  --accent-foreground: #1E3A5F;
-  --destructive: #C54B4B;
-  --destructive-foreground: #FDFCFA;
-  --border: #DDD8CF;
-  --input: #FDFCFA;
-  --ring: #C9A961;
+  --pearl: #f5f1e8;
+  --ivory: #fbf8f2;
+  --sand: #e9e3d7;
+  --mist: #ddd6c8;
+
+  --ink: #364f63;
+  --body: #6b7d8a;
+  --whisper: #8a99a5;
+
+  --champagne: #c9a45c;
+  --champagne-hover: #b89348;
+  --ocean: #6e8fa8;
+
+  --twilight: #4a6b82;
+  --twilight-deep: #3d5669;
+  --moonlight: #ede8df;
+
+  /* shadcn semantic tokens */
+  --background: var(--pearl);
+  --foreground: var(--ink);
+  --card: var(--ivory);
+  --card-foreground: var(--ink);
+  --popover: var(--ivory);
+  --popover-foreground: var(--ink);
+  --primary: var(--champagne);
+  --primary-foreground: var(--ink);
+  --secondary: var(--sand);
+  --secondary-foreground: var(--ink);
+  --muted: var(--sand);
+  --muted-foreground: var(--body);
+  --accent: var(--champagne);
+  --accent-foreground: var(--ink);
+  --destructive: #c46b6b;
+  --destructive-foreground: var(--ivory);
+  --border: var(--mist);
+  --input: var(--ivory);
+  --ring: var(--champagne);
   --radius: 0.625rem;
 
-  /* Custom Lumina tokens - softer palette */
-  --navy: #1E3A5F;
-  --cream: #F7F5F2;
-  --gold: #C9A961;
-  --gray: #9EA8B3;
-  --charcoal: #3D4F5F;
-  --sand: #EAE6DD;
-  --ocean: #4A6B8A;
+  /* Legacy Lumina aliases (keeps existing class names working) */
+  --navy: var(--ink);
+  --cream: var(--pearl);
+  --gold: var(--champagne);
+  --gray: var(--whisper);
+  --charcoal: var(--body);
 }
 
 @theme inline {
@@ -62,14 +87,25 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  
+
+  --color-pearl: var(--pearl);
+  --color-ivory: var(--ivory);
+  --color-sand: var(--sand);
+  --color-mist: var(--mist);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-whisper: var(--whisper);
+  --color-champagne: var(--champagne);
+  --color-ocean: var(--ocean);
+  --color-twilight: var(--twilight);
+  --color-twilight-deep: var(--twilight-deep);
+  --color-moonlight: var(--moonlight);
+
   --color-navy: var(--navy);
   --color-cream: var(--cream);
   --color-gold: var(--gold);
   --color-gray: var(--gray);
   --color-charcoal: var(--charcoal);
-  --color-sand: var(--sand);
-  --color-ocean: var(--ocean);
 }
 
 @layer base {
@@ -77,10 +113,18 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-body antialiased;
   }
   html {
     scroll-behavior: smooth;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-ink;
   }
 }
 
@@ -97,6 +141,13 @@
   }
   .animate-scale-in {
     animation: scaleIn 0.6s ease-out forwards;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 4px 24px -4px rgb(54 79 99 / 0.08);
+  }
+  .shadow-soft-lg {
+    box-shadow: 0 12px 40px -8px rgb(54 79 99 / 0.12);
   }
 }
 
