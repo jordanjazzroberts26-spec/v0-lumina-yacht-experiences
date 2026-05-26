@@ -1,47 +1,10 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    @media (prefers-color-scheme: light) {
-      .background { fill: #0A1628; }
-      .foreground { fill: #D4AF37; }
-    }
-    @media (prefers-color-scheme: dark) {
-      .background { fill: #F5F3F0; }
-      .foreground { fill: #0A1628; }
-    }
-  </style>
-  <g clip-path="url(#clip0_compass)">
-    <rect class="background" width="180" height="180" rx="37" />
-    <!-- Outer ring circles -->
-    <circle cx="90" cy="90" r="72" class="foreground" fill="none" stroke-width="3" opacity="0.8"/>
-    <circle cx="90" cy="90" r="65" class="foreground" fill="none" stroke-width="2" opacity="0.6"/>
-
-    <!-- Main compass star -->
-    <!-- North point (top) - filled -->
-    <polygon points="90,25 95,55 85,55" class="foreground" fill-opacity="0.9"/>
-    <!-- South point (bottom) - outlined -->
-    <polygon points="90,155 100,125 80,125" class="foreground" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- East point (right) - filled -->
-    <polygon points="155,90 125,95 125,85" class="foreground" fill-opacity="0.9"/>
-    <!-- West point (left) - outlined -->
-    <polygon points="25,90 55,100 55,80" class="foreground" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-
-    <!-- Secondary points (NE, SE, SW, NW) -->
-    <!-- NE -->
-    <polygon points="125,55 110,75 100,65" class="foreground" fill-opacity="0.6"/>
-    <!-- SE -->
-    <polygon points="125,125 115,105 105,115" class="foreground" fill-opacity="0.6"/>
-    <!-- SW -->
-    <polygon points="55,125 75,115 65,105" class="foreground" fill-opacity="0.6"/>
-    <!-- NW -->
-    <polygon points="55,55 65,75 75,65" class="foreground" fill-opacity="0.6"/>
-
-    <!-- Center circle -->
-    <circle cx="90" cy="90" r="8" class="foreground" fill-opacity="0.9"/>
-    <circle cx="90" cy="90" r="4" class="background" fill-opacity="0.9"/>
-  </g>
-  <defs>
-    <clipPath id="clip0_compass">
-      <rect width="180" height="180" fill="white"/>
-    </clipPath>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="Lumina compass">
+  <circle cx="16" cy="16" r="16" fill="#4a6b82"/>
+  <circle cx="16" cy="16" r="13.5" fill="#f5f1e8" stroke="#364f63" stroke-width="1"/>
+  <path d="M16 5.5 17.6 16 16 13.8 14.4 16Z" fill="#c9a45c"/>
+  <path d="M16 26.5 14.4 16 16 18.2 17.6 16Z" fill="#364f63"/>
+  <path d="M5.5 16 16 14.4 16 17.6 16 16Z" fill="#364f63" fill-opacity="0.85"/>
+  <path d="M26.5 16 16 17.6 16 14.4 16 16Z" fill="#364f63" fill-opacity="0.85"/>
+  <circle cx="16" cy="16" r="2.25" fill="#364f63"/>
+  <circle cx="16" cy="16" r="13.5" fill="none" stroke="#6e8fa8" stroke-width="0.75" stroke-opacity="0.5"/>
 </svg>
