@@ -14,22 +14,22 @@
  * Depth:     twilight · twilight-deep · moonlight (on dark)
  */
 :root {
-  --pearl: #f5f1e8;
-  --ivory: #fbf8f2;
-  --sand: #e9e3d7;
-  --mist: #ddd6c8;
+  --pearl: #f2f0ec;
+  --ivory: #f2f0ec;
+  --sand: #eae8e2;
+  --mist: #d5d2cc;
 
-  --ink: #364f63;
-  --body: #6b7d8a;
-  --whisper: #8a99a5;
+  --ink: #475569;
+  --body: #64748b;
+  --whisper: #94a3b8;
 
   --champagne: #c9a45c;
   --champagne-hover: #b89348;
   --ocean: #6e8fa8;
 
-  --twilight: #4a6b82;
-  --twilight-deep: #3d5669;
-  --moonlight: #ede8df;
+  --twilight: #3e5163;
+  --twilight-deep: #2c3e50;
+  --moonlight: #f8f9fa;
 
   /* shadcn semantic tokens */
   --background: var(--pearl);

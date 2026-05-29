@@ -28,13 +28,13 @@ const features = [
 
 export function Stats() {
   return (
-    <section id="about" className="py-24 px-6 lg:px-12 bg-twilight-deep text-white scroll-mt-24">
+    <section id="about" className="py-24 px-6 lg:px-12 bg-twilight-deep text-moonlight scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <ScrollAnimation animation="fade-up" className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 text-moonlight">
             Why Choose Lumina?
           </h2>
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-white">
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-moonlight">
             Experience the difference of true white-glove yacht service
           </p>
         </ScrollAnimation>
@@ -49,13 +49,13 @@ export function Stats() {
                 delay={index * 150}
                 className="flex flex-col items-center text-center group"
               >
-                <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110">
-                  <Icon className="w-8 h-8 text-[#F5E8C7]" strokeWidth={1.5} />
+                <div className="w-16 h-16 rounded-full bg-moonlight/10 flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110">
+                  <Icon className="w-8 h-8 text-champagne" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-[#F5E8C7]">
+                <h3 className="text-xl font-semibold mb-3 text-champagne">
                   {feature.title}
                 </h3>
-                <p className="text-white leading-relaxed max-w-xs mx-auto">
+                <p className="text-moonlight leading-relaxed max-w-xs mx-auto">
                   {feature.description}
                 </p>
               </ScrollAnimation>

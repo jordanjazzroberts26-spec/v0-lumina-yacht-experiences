@@ -50,7 +50,7 @@ export function Destinations() {
   const [api, setApi] = useState<CarouselApi>()
 
   return (
-    <section id="destinations" className="py-24 px-6 lg:px-12 bg-white overflow-hidden">
+    <section id="destinations" className="py-24 px-6 lg:px-12 bg-pearl overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <ScrollAnimation animation="fade-up" className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-ink mb-4">
@@ -96,7 +96,7 @@ export function Destinations() {
                         </p>
                         <Button 
                           variant="default" 
-                          className="w-fit bg-white text-ink hover:bg-white/90 hover:scale-105 transition-all duration-300 tracking-widest text-sm font-bold uppercase px-8 py-6 h-auto rounded-xl shadow-2xl shadow-black/60"
+                          className="w-fit bg-moonlight text-ink hover:bg-moonlight/90 hover:scale-105 transition-all duration-300 tracking-widest text-sm font-bold uppercase px-8 py-6 h-auto rounded-xl shadow-2xl shadow-black/60"
                         >
                           Explore
                         </Button>

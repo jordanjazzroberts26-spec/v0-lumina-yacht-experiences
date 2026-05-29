@@ -70,7 +70,7 @@ const fleetData = [
 
 export function Fleet() {
   return (
-    <section id="browse-yachts" className="py-12 md:py-16 px-6 lg:px-12 bg-white scroll-mt-24">
+    <section id="browse-yachts" className="py-12 md:py-16 px-6 lg:px-12 bg-pearl scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <ScrollAnimation animation="fade-up">
           <div className="text-center mb-16 space-y-4">
@@ -90,7 +90,7 @@ export function Fleet() {
               animation="fade-up"
               delay={index * 100}
             >
-              <div className="group flex flex-col h-full bg-white rounded-xl overflow-hidden border border-ink/5 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <div className="group flex flex-col h-full bg-ivory rounded-xl overflow-hidden border border-ink/5 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                 {/* Image */}
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-secondary/20">
                   <Image

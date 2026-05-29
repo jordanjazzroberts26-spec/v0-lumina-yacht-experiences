@@ -19,7 +19,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="py-24 px-6 lg:px-12 bg-white">
+    <section className="py-24 px-6 lg:px-12 bg-pearl">
       <div className="max-w-4xl mx-auto">
         <ScrollAnimation animation="fade-up" className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-ink mb-4">
