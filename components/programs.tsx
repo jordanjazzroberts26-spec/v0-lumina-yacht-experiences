@@ -33,11 +33,11 @@ const programs = [
 
 export function Programs({ onDiscoverMore }: ProgramsProps) {
   return (
-    <section id="programs" className="py-24 px-6 lg:px-12 bg-pearl">
+    <section id="experiences" className="py-24 px-6 lg:px-12 bg-pearl scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <ScrollAnimation animation="fade-up" className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-ink mb-4">
-            Three Curated Experiences
+            Book an Exclusive Experience
           </h2>
           <p className="text-body max-w-2xl mx-auto">
             Each program is thoughtfully designed to create unforgettable moments

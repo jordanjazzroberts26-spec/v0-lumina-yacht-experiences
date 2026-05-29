@@ -48,7 +48,7 @@ interface FAQProps {
 
 export function FAQ({ onOpenModal }: FAQProps) {
   return (
-    <section id="faq" className="py-32 px-6 lg:px-12 bg-pearl">
+    <section id="faq" className="py-16 px-6 lg:px-12 bg-pearl">
       <div className="max-w-4xl mx-auto">
         <ScrollAnimation animation="fade-up" className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-ink mb-6">

@@ -1,77 +1,66 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { ScrollAnimation, useCountUp } from "@/lib/animations"
+import { Clock, Sparkles, Shield, Star } from "lucide-react"
+import { ScrollAnimation } from "@/lib/animations"
 
-const stats = [
-  { value: 87, label: "Successful Voyages", suffix: "" },
-  { value: 98, label: "Would Return Again", suffix: "%" },
-  { value: 12, label: "Global Destinations", suffix: "+" },
-  { value: 500, label: "Satisfied Guests", suffix: "+" },
+const features = [
+  {
+    icon: Clock,
+    title: "Save Time",
+    description: "Reclaim your weekends. We handle everything so you don't have to.",
+  },
+  {
+    icon: Sparkles,
+    title: "White-Glove Care",
+    description: "Concierge-level attention to every detail, every time.",
+  },
+  {
+    icon: Shield,
+    title: "Peace of Mind",
+    description: "Professional care and maintenance you can trust completely.",
+  },
+  {
+    icon: Star,
+    title: "Always Ready",
+    description: "Your yacht is perfectly prepared for every journey.",
+  },
 ]
-
-function StatCounter({
-  value,
-  suffix,
-  label,
-}: {
-  value: number
-  suffix: string
-  label: string
-}) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
-  const count = useCountUp(value, 2000, isVisible)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.unobserve(entry.target)
-        }
-      },
-      { threshold: 0.5 }
-    )
-
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
-  return (
-    <div ref={ref} className="text-center">
-      <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-gold mb-2">
-        {count}
-        {suffix}
-      </div>
-      <p className="text-moonlight/80 text-sm md:text-base">{label}</p>
-    </div>
-  )
-}
 
 export function Stats() {
   return (
-    <section className="py-24 px-6 lg:px-12 bg-twilight">
+    <section id="about" className="py-24 px-6 lg:px-12 bg-twilight-deep text-white scroll-mt-24">
       <div className="max-w-7xl mx-auto">
-        <ScrollAnimation animation="fade-up" className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-moonlight mb-4">
-            By The Numbers
+        <ScrollAnimation animation="fade-up" className="text-center mb-20">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 text-white">
+            Why Choose Lumina?
           </h2>
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-white">
+            Experience the difference of true white-glove yacht service
+          </p>
         </ScrollAnimation>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {stats.map((stat, index) => (
-            <ScrollAnimation key={stat.label} animation="fade-up" delay={index * 150}>
-              <StatCounter
-                value={stat.value}
-                suffix={stat.suffix}
-                label={stat.label}
-              />
-            </ScrollAnimation>
-          ))}
+        <div className="grid gap-12 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((feature, index) => {
+            const Icon = feature.icon
+            return (
+              <ScrollAnimation
+                key={feature.title}
+                animation="fade-up"
+                delay={index * 150}
+                className="flex flex-col items-center text-center group"
+              >
+                <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110">
+                  <Icon className="w-8 h-8 text-[#F5E8C7]" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-[#F5E8C7]">
+                  {feature.title}
+                </h3>
+                <p className="text-white leading-relaxed max-w-xs mx-auto">
+                  {feature.description}
+                </p>
+              </ScrollAnimation>
+            )
+          })}
         </div>
       </div>
     </section>

@@ -5,6 +5,8 @@ import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { Programs } from "@/components/programs"
 import { Fleet } from "@/components/fleet"
+import { Destinations } from "@/components/destinations"
+import { HowItWorks } from "@/components/how-it-works"
 import { Gallery } from "@/components/gallery"
 import { Testimonials } from "@/components/testimonials"
 import { Stats } from "@/components/stats"
@@ -37,6 +39,8 @@ export default function Home() {
       <Hero onOpenModal={openModal} />
       <Programs onDiscoverMore={openModalWithProgram} />
       <Fleet />
+      <Destinations />
+      <HowItWorks />
       <Gallery />
       <Testimonials />
       <Stats />

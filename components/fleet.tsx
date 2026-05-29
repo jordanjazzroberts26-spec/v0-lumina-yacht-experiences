@@ -70,7 +70,7 @@ const fleetData = [
 
 export function Fleet() {
   return (
-    <section id="fleet" className="py-24 px-6 lg:px-12 bg-white">
+    <section id="browse-yachts" className="py-12 md:py-16 px-6 lg:px-12 bg-white scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <ScrollAnimation animation="fade-up">
           <div className="text-center mb-16 space-y-4">
