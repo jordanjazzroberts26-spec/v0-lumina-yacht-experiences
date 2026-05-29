@@ -78,18 +78,7 @@ export function FAQ({ onOpenModal }: FAQProps) {
           </Accordion>
         </ScrollAnimation>
 
-        <ScrollAnimation animation="fade-up" delay={400} className="text-center mt-16">
-          <p className="text-body mb-6 text-xl">
-            Have more questions? We would love to hear from you.
-          </p>
-          <Button
-            onClick={onOpenModal}
-            size="lg"
-            className="bg-gold text-ink font-semibold hover:bg-gold/90 shadow-soft transition-all duration-300 text-lg px-8"
-          >
-            Speak with Elena
-          </Button>
-        </ScrollAnimation>
+
       </div>
     </section>
   )

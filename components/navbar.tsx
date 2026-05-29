@@ -36,7 +36,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
           : "bg-transparent"
       }`}
     >
-      <nav className="flex items-center justify-between px-6 py-4 lg:px-12">
+      <nav className="relative flex items-center justify-between px-6 py-4 lg:px-12">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <span
@@ -49,12 +49,12 @@ export function Navbar({ onOpenModal }: NavbarProps) {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:text-gold ${
+              className={`text-xl font-semibold tracking-wide transition-colors duration-300 hover:text-gold ${
                 isScrolled ? "text-moonlight/85" : "text-moonlight/85"
               }`}
             >
