@@ -19,7 +19,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="py-24 px-6 lg:px-12 bg-pearl">
+    <section className="py-24 px-6 lg:px-12 bg-sand">
       <div className="max-w-4xl mx-auto">
         <ScrollAnimation animation="fade-up" className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-ink mb-4">
@@ -43,7 +43,7 @@ export function HowItWorks() {
                 className="relative pl-12 md:pl-16"
               >
                 {/* Bullet Point */}
-                <div className="absolute left-0 top-1.5 w-5 h-5 rounded-full bg-ink" />
+                <div className="absolute left-0 top-1.5 w-5 h-5 rounded-full border-2 border-champagne bg-ivory" />
                 
                 <h3 className="text-xl md:text-2xl font-semibold text-ink mb-3">
                   {step.title}

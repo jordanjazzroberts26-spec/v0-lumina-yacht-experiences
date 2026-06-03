@@ -65,7 +65,7 @@ export function Gallery() {
               delay={index * 100}
               className={`h-full min-h-[10rem] sm:min-h-[11rem] ${image.layout}`}
             >
-              <div className="relative h-full w-full overflow-hidden rounded-lg group shadow-soft">
+              <div className="relative h-full w-full overflow-hidden rounded-lg group card-hover-lift">
                 <Image
                   src={image.src}
                   alt={image.alt}

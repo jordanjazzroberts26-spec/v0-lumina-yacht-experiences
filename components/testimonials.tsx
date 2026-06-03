@@ -41,7 +41,7 @@ const testimonials = [
   {
     name: "Michael & Emma Thorne",
     location: "New York, USA",
-    image: "/images/hero.jpg",
+    image: "/images/gallery-1.jpg",
     quote:
       "A masterclass in luxury. The crew anticipated our every need before we even knew we had them. Flawless execution.",
     rating: 5,
@@ -49,7 +49,7 @@ const testimonials = [
   {
     name: "Liam O'Connor",
     location: "Dublin, Ireland",
-    image: "/images/hero.jpg",
+    image: "/images/gallery-2.jpg",
     quote:
       "Sydney Harbour is beautiful, but experiencing it on Lumina elevates it to something entirely otherworldly.",
     rating: 5,
@@ -57,7 +57,7 @@ const testimonials = [
   {
     name: "Isabella Rossi",
     location: "Rome, Italy",
-    image: "/images/hero.jpg",
+    image: "/images/gallery-3.jpg",
     quote:
       "The dining experience was Michelin-star quality, served with the backdrop of the open ocean. Unforgettable.",
     rating: 5,
@@ -65,7 +65,7 @@ const testimonials = [
   {
     name: "Arthur Pendelton",
     location: "Sydney, Australia",
-    image: "/images/hero.jpg",
+    image: "/images/gallery-4.jpg",
     quote:
       "I've chartered many vessels, but the elegance and sheer perfection of this fleet remain unmatched.",
     rating: 5,
@@ -73,7 +73,7 @@ const testimonials = [
   {
     name: "Chloe & Sam Davies",
     location: "Toronto, Canada",
-    image: "/images/hero.jpg",
+    image: "/images/gallery-5.jpg",
     quote:
       "Our corporate retreat was a phenomenal success. The balance of professionalism and luxury was impeccable.",
     rating: 5,
@@ -81,7 +81,7 @@ const testimonials = [
   {
     name: "Elena Rostova",
     location: "Monaco",
-    image: "/images/hero.jpg",
+    image: "/images/gallery-6.jpg",
     quote:
       "True sophistication lies in the details. Lumina executes every single one flawlessly, providing ultimate peace of mind.",
     rating: 5,
@@ -107,7 +107,7 @@ export function Testimonials() {
   }, [api])
 
   return (
-    <section className="py-24 px-6 lg:px-12 bg-secondary overflow-hidden">
+    <section className="py-24 px-6 lg:px-12 bg-sand overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <ScrollAnimation animation="fade-up" className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-ink mb-4">
@@ -131,7 +131,7 @@ export function Testimonials() {
               <CarouselContent className="-ml-4 md:-ml-6 lg:-ml-8">
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index} className="pl-4 md:pl-6 lg:pl-8 md:basis-1/2 lg:basis-1/3">
-                    <div className="bg-card rounded-lg p-8 shadow-soft hover:shadow-soft-lg transition-shadow duration-300 h-full flex flex-col">
+                    <div className="bg-card rounded-lg p-8 card-hover-lift h-full flex flex-col">
                       <div className="flex items-center gap-4 mb-6">
                         <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0">
                           <Image

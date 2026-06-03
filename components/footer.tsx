@@ -8,7 +8,7 @@ export function Footer() {
   const scrollToTop = useScrollToTop()
 
   const quickLinks = [
-    { href: "/#programs", label: "Programs" },
+    { href: "/#experiences", label: "Experiences" },
     { href: "/#about", label: "About" },
     { href: "/#gallery", label: "Gallery" },
     { href: "/#faq", label: "FAQ" },
@@ -28,7 +28,7 @@ export function Footer() {
           {/* About */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold tracking-wide">LUMINA</h3>
-            <p className="text-moonlight/80 text-sm leading-relaxed">
+            <p className="text-moonlight/80 text-base leading-relaxed">
               Luxury yacht voyages curated for extraordinary experiences. Where the
               right people, the right food, and the right ocean come together.
             </p>

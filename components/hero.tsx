@@ -23,13 +23,13 @@ export function Hero({ onOpenModal }: HeroProps) {
           quality={90}
         />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-twilight-deep/55 via-twilight/40 to-twilight-deep/65" />
+        <div className="absolute inset-0 bg-gradient-to-b from-harbor-deep/50 via-twilight/35 to-harbor-deep/60" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <ScrollAnimation animation="fade-up" delay={200}>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-moonlight mb-6 leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-moonlight mb-6 leading-tight tracking-wide">
             Escape the Ordinary
           </h1>
         </ScrollAnimation>
@@ -44,7 +44,7 @@ export function Hero({ onOpenModal }: HeroProps) {
           <Button
             onClick={onOpenModal}
             size="lg"
-            className="bg-gold text-ink font-semibold hover:bg-gold/90 shadow-soft transition-all duration-300 px-8 py-6 text-base"
+            className="bg-gold text-ink font-semibold hover:bg-gold/90 shadow-soft transition-all duration-500 px-8 py-6 text-base"
           >
             Explore Voyages
           </Button>

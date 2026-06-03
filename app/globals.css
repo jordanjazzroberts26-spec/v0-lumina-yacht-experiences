@@ -4,18 +4,18 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Lumina — Sunset Harbor palette
+ * Lumina — Midnight Harbor palette
  * Warm pearl surfaces, harbor-blue typography, champagne CTAs.
  * Designed for comfortable reading with enough contrast to convert.
  *
  * Surfaces:  pearl · ivory · sand · mist
  * Type:      ink (headings) · body · whisper
  * Accents:   champagne · ocean
- * Depth:     twilight · twilight-deep · moonlight (on dark)
+ * Depth:     twilight · twilight-deep · harbor-deep · moonlight (on dark)
  */
 :root {
   --pearl: #f2f0ec;
-  --ivory: #f2f0ec;
+  --ivory: #f7f5f2;
   --sand: #eae8e2;
   --mist: #d5d2cc;
 
@@ -29,6 +29,7 @@
 
   --twilight: #3e5163;
   --twilight-deep: #2c3e50;
+  --harbor-deep: #1a3636;
   --moonlight: #f8f9fa;
 
   /* shadcn semantic tokens */
@@ -99,6 +100,7 @@
   --color-ocean: var(--ocean);
   --color-twilight: var(--twilight);
   --color-twilight-deep: var(--twilight-deep);
+  --color-harbor-deep: var(--harbor-deep);
   --color-moonlight: var(--moonlight);
 
   --color-navy: var(--navy);
@@ -126,6 +128,9 @@
   h6 {
     @apply text-ink;
   }
+  p {
+    @apply leading-relaxed;
+  }
 }
 
 /* Smooth scroll animation utilities */
@@ -148,6 +153,35 @@
   }
   .shadow-soft-lg {
     box-shadow: 0 12px 40px -8px rgb(54 79 99 / 0.12);
+  }
+
+  .overlay-scrim {
+    background-color: rgb(44 62 80 / 0.45);
+  }
+
+  .card-hover-lift {
+    box-shadow: 0 4px 24px -4px rgb(54 79 99 / 0.08);
+    transition: all 0.5s ease;
+  }
+  .card-hover-lift:hover {
+    box-shadow: 0 12px 40px -8px rgb(54 79 99 / 0.12);
+    transform: translateY(-0.25rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fade-in,
+  .animate-fade-up,
+  .animate-fade-left,
+  .animate-scale-in,
+  .animate-bounce {
+    animation: none !important;
+  }
+  .card-hover-lift:hover {
+    transform: none;
   }
 }
 

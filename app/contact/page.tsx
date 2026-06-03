@@ -185,7 +185,7 @@ export default function ContactPage() {
 
                     <Button
                       type="submit"
-                      className="w-full bg-gold text-ink font-semibold hover:bg-gold/90 shadow-soft transition-all duration-300"
+                      className="w-full bg-gold text-ink font-semibold hover:bg-gold/90 shadow-soft transition-all duration-500"
                     >
                       Send Message
                     </Button>

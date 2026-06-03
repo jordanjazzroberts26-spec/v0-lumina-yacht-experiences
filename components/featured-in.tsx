@@ -12,7 +12,7 @@ const publications = [
 
 export function FeaturedIn() {
   return (
-    <section className="py-16 px-6 lg:px-12 bg-pearl border-y border-border">
+    <section className="py-16 px-6 lg:px-12 bg-pearl border-y border-mist">
       <div className="max-w-7xl mx-auto">
         <ScrollAnimation animation="fade-up" className="text-center mb-8">
           <p className="text-whisper text-sm uppercase tracking-widest">

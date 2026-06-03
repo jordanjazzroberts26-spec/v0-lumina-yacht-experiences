@@ -9,6 +9,11 @@ interface ScrollAnimationProps {
   animation?: "fade-in" | "fade-up" | "fade-left" | "scale-in"
 }
 
+function prefersReducedMotion(): boolean {
+  if (typeof window === "undefined") return false
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches
+}
+
 export function ScrollAnimation({
   children,
   className = "",
@@ -17,8 +22,18 @@ export function ScrollAnimation({
 }: ScrollAnimationProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
+  const [reduceMotion, setReduceMotion] = useState(false)
 
   useEffect(() => {
+    setReduceMotion(prefersReducedMotion())
+  }, [])
+
+  useEffect(() => {
+    if (reduceMotion) {
+      setIsVisible(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -34,7 +49,7 @@ export function ScrollAnimation({
     }
 
     return () => observer.disconnect()
-  }, [delay])
+  }, [delay, reduceMotion])
 
   const animationClasses: Record<string, string> = {
     "fade-in": "animate-fade-in",
@@ -43,11 +58,14 @@ export function ScrollAnimation({
     "scale-in": "animate-scale-in",
   }
 
+  const visibleClass = reduceMotion
+    ? "opacity-100"
+    : isVisible
+      ? animationClasses[animation]
+      : "opacity-0"
+
   return (
-    <div
-      ref={ref}
-      className={`${className} ${isVisible ? animationClasses[animation] : "opacity-0"}`}
-    >
+    <div ref={ref} className={`${className} ${visibleClass}`}>
       {children}
     </div>
   )
@@ -55,7 +73,8 @@ export function ScrollAnimation({
 
 export function useScrollToTop() {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    const behavior = prefersReducedMotion() ? "auto" : "smooth"
+    window.scrollTo({ top: 0, behavior })
   }
   return scrollToTop
 }
@@ -65,6 +84,11 @@ export function useCountUp(target: number, duration = 2000, start = false) {
 
   useEffect(() => {
     if (!start) return
+
+    if (prefersReducedMotion()) {
+      setCount(target)
+      return
+    }
 
     let startTime: number | null = null
     const startValue = 0

@@ -67,7 +67,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-twilight-deep/92 backdrop-blur-sm shadow-soft"
+          ? "bg-twilight-deep/92 backdrop-blur-sm shadow-soft border-b border-moonlight/10"
           : "bg-transparent"
       }`}
     >
@@ -105,7 +105,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
               {/* Dropdown */}
               {link.dropdown && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-3 group-hover:translate-y-0 transition-all duration-300 ease-out z-50">
-                  <div className="py-3 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-ink/5 overflow-hidden flex flex-col">
+                  <div className="py-3 bg-pearl/95 backdrop-blur-xl rounded-xl shadow-soft-lg border border-mist overflow-hidden flex flex-col">
                     {link.dropdown.map((item) => (
                       <a
                         key={item}
@@ -144,7 +144,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="bg-twilight-deep/98 backdrop-blur-xl lg:hidden absolute top-full left-0 right-0 border-t border-moonlight/10 shadow-2xl max-h-[80vh] overflow-y-auto">
+        <div className="bg-twilight-deep/98 backdrop-blur-xl lg:hidden absolute top-full left-0 right-0 border-t border-moonlight/10 shadow-soft-lg max-h-[80vh] overflow-y-auto">
           <div className="flex flex-col px-6 py-6 space-y-6">
             {navLinks.map((link) => (
               <div key={link.label} className="flex flex-col space-y-3">

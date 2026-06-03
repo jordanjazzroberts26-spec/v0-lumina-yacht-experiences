@@ -12,7 +12,7 @@ export function CaptainElena() {
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           {/* Portrait */}
           <ScrollAnimation animation="fade-left">
-            <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-xl">
+            <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-soft-lg">
               <Image
                 src="/images/captain-derek.png"
                 alt="Captain Derek Langford"

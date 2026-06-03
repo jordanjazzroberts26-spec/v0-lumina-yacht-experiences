@@ -52,7 +52,7 @@ export function Programs({ onDiscoverMore }: ProgramsProps) {
               animation="fade-up"
               delay={index * 200}
             >
-              <div className="group bg-card rounded-lg overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-300">
+              <div className="group bg-card rounded-lg overflow-hidden card-hover-lift">
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     src={program.image}
@@ -65,7 +65,7 @@ export function Programs({ onDiscoverMore }: ProgramsProps) {
                   <h3 className="text-xl font-semibold text-ink mb-3">
                     {program.title}
                   </h3>
-                  <p className="text-body text-sm leading-relaxed">
+                  <p className="text-body text-base leading-relaxed">
                     {program.description}
                   </p>
                   <button
