@@ -2,12 +2,13 @@
 
 import { useCallback, useEffect, useRef, useState } from "react"
 import Image from "next/image"
+import styles from "@/lib/hero-animation.module.css"
 
 const POSTER = "/images/hero.jpg"
 const VIDEO_DESKTOP = "/videos/hero.mp4"
 const VIDEO_MOBILE = "/videos/hero-mobile.mp4"
 
-type BackgroundMode = "poster" | "video" | "image"
+type BackgroundMode = "poster" | "video" | "image" | "animated"
 
 function canAutoplayVideo(): boolean {
   if (typeof window === "undefined") return false
@@ -56,7 +57,7 @@ export function HeroBackgroundVideo() {
       return
     }
 
-    setMode("image")
+    setMode("animated")
   }, [videoSrc])
 
   useEffect(() => {
@@ -97,7 +98,7 @@ export function HeroBackgroundVideo() {
         alt="Luxury yacht at golden hour"
         fill
         className={`object-cover transition-opacity duration-700 ${
-          mode === "video" && videoReady ? "opacity-0" : "opacity-100"
+          (mode === "video" && videoReady) || mode === "animated" ? "opacity-0" : "opacity-100"
         }`}
         priority
         quality={90}
@@ -122,6 +123,10 @@ export function HeroBackgroundVideo() {
         >
           <source src={videoSrc} type="video/mp4" />
         </video>
+      )}
+
+      {mode === "animated" && (
+        <div className={`absolute inset-0 ${styles.heroAnimation}`} aria-hidden />
       )}
 
       {/* Dark overlay for text readability - primary layer */}

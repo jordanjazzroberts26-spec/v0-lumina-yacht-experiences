@@ -1,0 +1,94 @@
+.heroAnimation {
+  animation: heroScenes 15s infinite linear;
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+}
+
+@keyframes heroScenes {
+  /* Water scene - deep ocean blues with wave motion */
+  0% {
+    background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 50%, #3d7a9f 100%);
+    background-size: 200% 200%;
+  }
+
+  /* Water to Yacht transition */
+  18% {
+    background: linear-gradient(180deg, #5a7fa0 0%, #1a3a52 40%, #2d5a7b 60%, #1a2f42 100%);
+    background-size: 200% 200%;
+  }
+
+  /* Yacht scene - yacht on water with sky */
+  20% {
+    background: linear-gradient(180deg, #7da4c4 0%, #5a8fa0 30%, #2d5a7b 60%, #1a2f42 100%);
+  }
+
+  /* Yacht to People transition */
+  38% {
+    background: linear-gradient(180deg, #8eb5d4 0%, #6a9fb0 35%, #3d6a7b 65%, #1a2f42 100%);
+  }
+
+  /* People on deck scene - bright deck lighting */
+  40% {
+    background: linear-gradient(180deg, #a8c5d4 0%, #8fb0c4 25%, #5a8fa0 50%, #2d5a7b 75%, #1a3a52 100%);
+  }
+
+  /* People to BBQ transition - warm golden tones */
+  58% {
+    background: linear-gradient(180deg, #d4a574 0%, #c49470 20%, #a88d68 40%, #8a7a5a 60%, #3d6a7b 80%, #1a3a52 100%);
+  }
+
+  /* BBQ scene - sunset/golden lighting with warm tones */
+  60% {
+    background: linear-gradient(135deg, #f4b860 0%, #e09850 15%, #d4825a 30%, #b8704a 45%, #8a5a3a 60%, #5a7a90 75%, #2d4a62 100%);
+    box-shadow: inset 0 0 120px rgba(244, 184, 96, 0.3);
+  }
+
+  /* BBQ to Lounge transition - transitioning indoors */
+  78% {
+    background: linear-gradient(135deg, #c4a878 0%, #b89860 20%, #a8846a 40%, #8c7a6a 60%, #6a7a88 75%, #4a6a80 90%, #2a4a62 100%);
+  }
+
+  /* Lounge/Couches scene - warm indoor lighting */
+  80% {
+    background: linear-gradient(135deg, #b8a88a 0%, #a89878 15%, #9a8870 30%, #8a7a68 45%, #7a6a5a 60%, #5a7a88 75%, #3a5a78 100%);
+    box-shadow: inset 0 0 60px rgba(180, 150, 100, 0.2);
+  }
+
+  /* Lounge to Water transition */
+  95% {
+    background: linear-gradient(180deg, #7a6a5a 0%, #5a5a50 20%, #4a6a7a 40%, #3d6a8a 60%, #2d5a7b 80%, #1a3a52 100%);
+  }
+
+  /* Back to Water scene */
+  100% {
+    background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 50%, #3d7a9f 100%);
+  }
+}
+
+/* Subtle wave animation for water effect */
+@keyframes waveFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Enhanced scene transitions */
+@media (prefers-reduced-motion: no-preference) {
+  .heroAnimation {
+    animation: heroScenes 15s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .heroAnimation {
+    background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 50%, #3d7a9f 100%);
+    animation: none;
+  }
+}
