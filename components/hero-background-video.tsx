@@ -91,7 +91,7 @@ export function HeroBackgroundVideo() {
   }, [mode, videoSrc, handleVideoError])
 
   return (
-    <div className="absolute inset-0">
+    <div className="absolute inset-0 overflow-hidden">
       <Image
         src={POSTER}
         alt="Luxury yacht at golden hour"
@@ -124,13 +124,15 @@ export function HeroBackgroundVideo() {
         </video>
       )}
 
-      {/* Dark overlay for text readability */}
+      {/* Dark overlay for text readability - primary layer */}
       <div
-        className="absolute inset-0 bg-twilight-deep/55"
+        className="absolute inset-0 bg-black/40"
         aria-hidden
       />
+
+      {/* Gradient overlay for visual depth and text contrast */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-harbor-deep/50 via-twilight/35 to-harbor-deep/60"
+        className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/50 to-black/45"
         aria-hidden
       />
     </div>
