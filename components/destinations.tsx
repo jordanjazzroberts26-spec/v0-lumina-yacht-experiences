@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { ScrollAnimation } from "@/lib/animations"
 import { Button } from "@/components/ui/button"
 import {
@@ -15,31 +16,37 @@ import {
 
 const destinations = [
   {
+    slug: "great-barrier-reef",
     title: "Great Barrier Reef",
     description: "Luxury Yacht Charters in the Great Barrier Reef",
     image: "/images/gallery-1.jpg",
   },
   {
+    slug: "sydney-harbour",
     title: "Sydney Harbour",
     description: "Iconic Luxury Charters on Sydney Harbour",
     image: "/images/gallery-2.jpg",
   },
   {
+    slug: "new-zealand",
     title: "New Zealand",
     description: "Breathtaking Fiords & Coastal Adventures",
     image: "/images/gallery-4.jpg",
   },
   {
+    slug: "pacific-islands",
     title: "Pacific Islands",
     description: "Tropical Paradise Escapes",
     image: "/images/gallery-3.jpg",
   },
   {
+    slug: "tasmania",
     title: "Tasmania",
     description: "Wild & Rugged Coastal Journeys",
     image: "/images/gallery-5.jpg",
   },
   {
+    slug: "hunter-valley",
     title: "Hunter Valley",
     description: "Gourmet Wine & Waterfront Getaways",
     image: "/images/program-bespoke.jpg",
@@ -74,7 +81,7 @@ export function Destinations() {
               <CarouselContent className="-ml-4 md:-ml-6 lg:-ml-8">
                 {destinations.map((destination, index) => (
                   <CarouselItem key={index} className="pl-4 md:pl-6 lg:pl-8 md:basis-1/2 lg:basis-1/3">
-                    <div className="relative group rounded-lg overflow-hidden h-[450px] card-hover-lift">
+                    <div className="relative group rounded-lg overflow-hidden h-[450px] shadow-soft hover:shadow-soft-lg transition-all duration-500">
                       <Image
                         src={destination.image}
                         alt={destination.title}
@@ -91,11 +98,14 @@ export function Destinations() {
                         <p className="text-moonlight/85 mb-6 text-base leading-relaxed max-w-[90%]">
                           {destination.description}
                         </p>
-                        <Button
-                          variant="default"
-                          className="w-fit bg-moonlight text-ink hover:bg-moonlight/90 transition-all duration-500 tracking-wide text-sm font-semibold uppercase px-8 py-6 h-auto rounded-xl shadow-soft"
+                        <Button 
+                          asChild
+                          variant="default" 
+                          className="w-fit bg-moonlight text-ink hover:bg-moonlight/90 hover:scale-105 transition-all duration-300 tracking-widest text-sm font-bold uppercase px-8 py-6 h-auto rounded-xl shadow-2xl shadow-black/60"
                         >
-                          Explore
+                          <Link href={`/destinations/${destination.slug}`}>
+                            Explore
+                          </Link>
                         </Button>
                       </div>
                     </div>
