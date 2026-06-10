@@ -63,7 +63,7 @@ export function HowItWorks() {
             }}
           >
             <div className="w-full md:w-5/12 pt-4">
-              <ScrollAnimation animation="fade-right">
+              <ScrollAnimation animation="fade-in">
                 <StepperNav className="h-full">
                   {steps.map((step, index) => (
                     <StepperItem
