@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import { ChevronDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { ScrollAnimation } from "@/lib/animations"
 
 interface HeroProps {
@@ -38,16 +37,6 @@ export function Hero({ onOpenModal }: HeroProps) {
           <p className="text-lg md:text-xl text-moonlight/90 mb-8 max-w-2xl mx-auto leading-relaxed">
             Luxury yacht voyages curated for extraordinary experiences
           </p>
-        </ScrollAnimation>
-
-        <ScrollAnimation animation="fade-up" delay={600}>
-          <Button
-            onClick={onOpenModal}
-            size="lg"
-            className="bg-gold text-ink font-semibold hover:bg-gold/90 shadow-soft transition-all duration-500 px-8 py-6 text-base"
-          >
-            Explore Voyages
-          </Button>
         </ScrollAnimation>
       </div>
 

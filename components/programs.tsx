@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { ScrollAnimation } from "@/lib/animations"
 
 interface ProgramsProps {
@@ -51,9 +52,10 @@ export function Programs({ onDiscoverMore }: ProgramsProps) {
               key={program.title}
               animation="fade-up"
               delay={index * 200}
+              className="h-full"
             >
-              <div className="group bg-card rounded-lg overflow-hidden card-hover-lift">
-                <div className="relative h-64 overflow-hidden">
+              <div className="group bg-card rounded-lg overflow-hidden card-hover-lift flex flex-col h-full">
+                <div className="relative h-64 overflow-hidden shrink-0">
                   <Image
                     src={program.image}
                     alt={program.title}
@@ -61,23 +63,22 @@ export function Programs({ onDiscoverMore }: ProgramsProps) {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-semibold text-ink mb-3">
                     {program.title}
                   </h3>
-                  <p className="text-body text-base leading-relaxed">
+                  <p className="text-body text-base leading-relaxed flex-grow">
                     {program.description}
                   </p>
-                  <button
-                    type="button"
-                    onClick={() => onDiscoverMore(program.slug)}
-                    className="inline-flex items-center gap-2 mt-4 text-gold text-sm font-medium hover:text-gold/80 transition-colors group/btn"
+                  <Link
+                    href={`/experiences/${program.slug}`}
+                    className="inline-flex items-center gap-2 mt-4 text-gold text-sm font-medium hover:text-gold/80 transition-colors group/btn mt-auto"
                   >
                     Discover More
                     <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </ScrollAnimation>
