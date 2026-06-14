@@ -17,11 +17,7 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://luminayachtexperiences.com'),
-  title: {
-    default: 'Lumina Yacht Experiences | Luxury Yacht Voyages',
-    template: '%s | Lumina Yacht Experiences',
-  },
+  title: 'Lumina Yacht Experiences | Luxury Yacht Voyages',
   description: 'Escape the ordinary. Luxury yacht voyages curated for extraordinary experiences. Signature collections, bespoke journeys, and wellness retreats.',
   keywords: [
     'luxury yacht charter',
@@ -72,6 +68,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  generator: 'v0.app',
   icons: {
     icon: [
       { url: '/icon.svg', type: 'image/svg+xml' },

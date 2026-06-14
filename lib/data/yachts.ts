@@ -122,7 +122,7 @@ export const fleetData: Yacht[] = [
     name: "BLACK DIAMOND",
     capacity: "150 guests",
     price: "$5,800–$6,500 per hour",
-    image: "/images/fleet/yacht-black-diamond.jpg",
+    image: "/images/fleet/yacht-black-diamond-v2.png",
     length: 180,
     cabins: 8,
     speed: 21,

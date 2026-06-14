@@ -98,15 +98,6 @@ export function Destinations() {
                         <p className="text-moonlight/85 mb-6 text-base leading-relaxed max-w-[90%]">
                           {destination.description}
                         </p>
-                        <Button 
-                          asChild
-                          variant="default" 
-                          className="w-fit bg-moonlight text-ink hover:bg-moonlight/90 hover:scale-105 transition-all duration-300 tracking-widest text-sm font-bold uppercase px-8 py-6 h-auto rounded-xl shadow-2xl shadow-black/60"
-                        >
-                          <Link href={`/destinations/${destination.slug}`}>
-                            Explore
-                          </Link>
-                        </Button>
                       </div>
                     </div>
                   </CarouselItem>

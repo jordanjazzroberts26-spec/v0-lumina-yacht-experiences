@@ -60,7 +60,7 @@ export default function YachtsPage() {
       
       {/* Fleet Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-48 md:pb-24 px-6 lg:px-12 bg-ink overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('/images/gallery-2.jpg')] bg-cover bg-center mix-blend-luminosity" />
+        <div className="absolute inset-0 opacity-20 bg-[url('/images/fleet/yacht-black-diamond.jpg')] bg-cover bg-center mix-blend-luminosity" />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/80 to-ink" />
         
         <div className="relative z-10 max-w-7xl mx-auto text-center">
