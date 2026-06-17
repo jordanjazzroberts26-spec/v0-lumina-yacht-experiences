@@ -9,10 +9,15 @@ import { Footer } from "@/components/footer"
 import { ExperienceModal } from "@/components/experience-modal"
 import { FeaturedVoyages } from "@/components/featured-voyages"
 import { SignatureFeatures } from "@/components/signature-features"
+import { SignatureDifferentiation } from "@/components/signature-differentiation"
 import { SignatureDestinations } from "@/components/signature-destinations"
 import { SignatureMoments } from "@/components/signature-moments"
 import { SignatureTestimonials } from "@/components/signature-testimonials"
+import { SignaturePackages } from "@/components/signature-packages"
 import { SignatureFleet } from "@/components/signature-fleet"
+import { SignatureFaq } from "@/components/signature-faq"
+import { SignatureCta } from "@/components/signature-cta"
+import { SignatureJourney } from "@/components/signature-journey"
 import { ScrollAnimation } from "@/lib/animations"
 
 export function SignatureClient() {
@@ -141,9 +146,13 @@ export function SignatureClient() {
         </div>
       </section>
 
+      <SignatureJourney />
+
       <FeaturedVoyages />
 
       <SignatureFeatures />
+      
+      <SignatureDifferentiation />
       
       <SignatureDestinations />
 
@@ -151,7 +160,13 @@ export function SignatureClient() {
       
       <SignatureTestimonials />
 
+      <SignaturePackages />
+
       <SignatureFleet />
+
+      <SignatureFaq />
+
+      <SignatureCta onOpenModal={openModal} />
 
       <Footer />
       
