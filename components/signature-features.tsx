@@ -117,7 +117,7 @@ export function SignatureFeatures() {
               <div key={feature.title} className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}>
                 
                 <ScrollAnimation 
-                  animation={isEven ? "fade-right" : "fade-left"} 
+                  animation={isEven ? "fade-in" : "fade-left"} 
                   className="w-full lg:w-1/2"
                 >
                   <div className="relative h-[400px] lg:h-[550px] w-full rounded-2xl overflow-hidden shadow-soft-lg group">
@@ -132,7 +132,7 @@ export function SignatureFeatures() {
                 </ScrollAnimation>
 
                 <ScrollAnimation 
-                  animation={isEven ? "fade-left" : "fade-right"} 
+                  animation={isEven ? "fade-left" : "fade-in"} 
                   className="w-full lg:w-1/2"
                 >
                   <div className="max-w-xl">
