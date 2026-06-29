@@ -1,11 +1,9 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
 import { ScrollAnimation } from "@/lib/animations"
-import { ChatCircleText, MapTrifold, Anchor, Plus, CheckCircle } from "@phosphor-icons/react"
-import Modal from "@/components/ui/modal-drop"
-import { Button } from "@/components/ui/button"
+import { MessageCircle, Map, Anchor, Plus } from "lucide-react"
+import { SpotlightCard } from "@/components/ui/spotlight-card"
 
 const steps = [
   {
@@ -20,7 +18,8 @@ const steps = [
     ],
     quote: '"The first step toward the extraordinary."',
     image: "/images/gallery-5.jpg",
-    icon: ChatCircleText,
+    icon: MessageCircle,
+    color: "rgba(201, 164, 92, 0.25)",
   },
   {
     id: 2,
@@ -34,7 +33,8 @@ const steps = [
     ],
     quote: '"A completely bespoke nautical tapestry."',
     image: "/images/gallery-6.jpg",
-    icon: MapTrifold,
+    icon: Map,
+    color: "rgba(201, 164, 92, 0.25)",
   },
   {
     id: 3,
@@ -49,12 +49,11 @@ const steps = [
     quote: '"Let the ocean change your perspective."',
     image: "/images/gallery-3.jpg",
     icon: Anchor,
+    color: "rgba(201, 164, 92, 0.25)",
   },
 ]
 
 export function SignatureJourney() {
-  const [selectedStep, setSelectedStep] = useState<typeof steps[0] | null>(null)
-
   return (
     <section className="py-24 px-6 lg:px-12 bg-ivory relative overflow-hidden border-t border-mist/30">
       <div className="max-w-7xl mx-auto">
@@ -71,17 +70,17 @@ export function SignatureJourney() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
             <ScrollAnimation key={step.id} animation="fade-up" delay={index * 150} className="h-full">
-              <div 
-                className="relative group w-full h-[540px] rounded-[32px] overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-500 bg-pearl cursor-pointer border border-white/40"
-                onClick={() => setSelectedStep(step)}
+              <SpotlightCard 
+                spotlightColor={step.color}
+                className="w-full h-[540px] rounded-[32px] bg-pearl text-twilight-deep border-white/40 shadow-soft p-0 flex flex-col justify-between group"
               >
                 {/* Faded background photo */}
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 z-0 pointer-events-none">
                   <Image 
                     src={step.image} 
                     fill 
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover opacity-20 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-30" 
+                    className="object-cover opacity-20" 
                     alt={step.title} 
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-pearl/90 via-pearl/80 to-pearl border border-white/20 mix-blend-overlay" />
@@ -89,14 +88,14 @@ export function SignatureJourney() {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 p-8 md:p-10 flex flex-col h-full justify-between">
+                <div className="relative z-10 p-8 md:p-10 flex flex-col h-full justify-between pointer-events-none">
                   <div>
                     {/* Icon and + sign */}
                     <div className="flex items-center gap-3 mb-10">
-                      <div className="w-14 h-14 rounded-2xl bg-white/70 backdrop-blur-md shadow-sm border border-white flex items-center justify-center text-champagne group-hover:bg-white group-hover:shadow transition-all duration-300">
-                         <step.icon weight="light" size={28} />
+                      <div className="w-14 h-14 rounded-2xl bg-white/70 backdrop-blur-md shadow-sm border border-white flex items-center justify-center text-champagne">
+                         <step.icon size={28} strokeWidth={1.5} />
                       </div>
-                      <Plus size={18} weight="bold" className="text-twilight-deep/30" />
+                      <Plus size={18} strokeWidth={3} className="text-twilight-deep/30" />
                     </div>
 
                     {/* Headline and subline */}
@@ -121,46 +120,10 @@ export function SignatureJourney() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             </ScrollAnimation>
           ))}
         </div>
-
-        {/* Modal */}
-        <Modal
-          isOpen={!!selectedStep}
-          onClose={() => setSelectedStep(null)}
-          title={selectedStep?.title}
-          subtitle={selectedStep?.subtitle}
-          animationType="scale"
-          type="blur"
-        >
-          {selectedStep && (
-            <div className="space-y-8">
-              <div className="relative w-full h-48 rounded-xl overflow-hidden mb-6 shadow-sm border border-twilight-deep/5">
-                 <Image src={selectedStep.image} fill className="object-cover" alt={selectedStep.title} />
-              </div>
-              
-              <div className="space-y-4">
-                <h4 className="font-semibold text-twilight-deep text-lg">What to expect</h4>
-                <div className="grid gap-3">
-                  {selectedStep.bullets.map((bullet, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3 bg-ivory rounded-lg border border-white shadow-sm">
-                      <CheckCircle weight="fill" className="text-champagne w-5 h-5 shrink-0" />
-                      <p className="text-sm font-medium text-twilight-deep/90">{bullet}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex gap-3 pt-4">
-                <Button variant="outline" className="flex-1" onClick={() => setSelectedStep(null)}>
-                  Close
-                </Button>
-              </div>
-            </div>
-          )}
-        </Modal>
       </div>
     </section>
   )
