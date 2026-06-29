@@ -10,6 +10,7 @@ import { ExperienceModal } from "@/components/experience-modal"
 import { BespokeIntro } from "@/components/bespoke-intro"
 import { BespokePossibilities } from "@/components/bespoke-possibilities"
 import { BespokeProcess } from "@/components/bespoke-process"
+import { BespokeFleet } from "@/components/bespoke-fleet"
 import { ScrollAnimation } from "@/lib/animations"
 
 export function BespokeClient() {
@@ -100,6 +101,8 @@ export function BespokeClient() {
       <BespokePossibilities />
 
       <BespokeProcess />
+
+      <BespokeFleet />
 
       <Footer />
       

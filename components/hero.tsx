@@ -44,7 +44,7 @@ export function Hero({ onOpenModal }: HeroProps) {
         <ScrollAnimation animation="fade-up" delay={600}>
           <button
             onClick={onOpenModal}
-            className="px-10 py-5 bg-champagne text-white text-lg font-bold tracking-widest uppercase rounded-radius hover:bg-champagne-hover hover:scale-105 shadow-[0_0_25px_rgba(201,164,92,0.4)] hover:shadow-[0_0_40px_rgba(201,164,92,0.6)] transition-all duration-300"
+            className="px-10 py-5 bg-champagne text-white text-lg font-bold tracking-widest uppercase rounded-radius hover:bg-champagne-hover hover:scale-[1.025] hover:shadow-lg transition-all duration-300 ease-out"
           >
             Explore Voyages
           </button>

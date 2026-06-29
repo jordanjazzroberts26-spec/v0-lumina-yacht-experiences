@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, use } from "react"
 import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
@@ -11,9 +11,10 @@ import { ExperienceModal } from "@/components/experience-modal"
 import { Button } from "@/components/ui/button"
 import { getExperienceBySlug } from "@/lib/data/experiences"
 
-export default function ExperiencePage({ params }: { params: { slug: string } }) {
+export default function ExperiencePage({ params }: { params: Promise<{ slug: string }> }) {
+  const unwrappedParams = use(params)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const experience = getExperienceBySlug(params.slug)
+  const experience = getExperienceBySlug(unwrappedParams.slug)
 
   if (!experience) {
     notFound()

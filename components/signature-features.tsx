@@ -168,7 +168,7 @@ export function SignatureFeatures() {
             
             <div className="text-center mb-16 relative z-10">
               <span className="text-champagne font-bold tracking-widest uppercase text-sm mb-4 block">Sneak Peek</span>
-              <h3 className="text-4xl md:text-5xl font-semibold">A Day in the Life</h3>
+              <h3 className="text-5xl md:text-6xl font-bold text-white tracking-wide">A Day in the Life</h3>
               <p className="text-pearl/80 text-lg max-w-2xl mx-auto mt-6">
                 While every itinerary is unique, here is a glimpse into the effortless rhythm of a typical day aboard our Signature Collection.
               </p>
