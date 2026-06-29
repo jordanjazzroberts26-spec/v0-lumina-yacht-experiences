@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { ChevronRight, Map, Users, Utensils, Sparkles } from "lucide-react"
 import { Navbar } from "@/components/navbar"
@@ -31,17 +30,20 @@ export function SignatureClient() {
       <Navbar onOpenModal={openModal} />
 
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[700px] flex flex-col pt-20">
+      <section className="relative h-screen min-h-[700px] flex flex-col pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/yacht-sunset.png"
-            alt="Luxury Yacht at Sunset"
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-twilight-deep/70 via-twilight-deep/40 to-twilight-deep/80" />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-hidden
+            className="absolute inset-0 h-full w-full object-cover"
+            poster="/images/yacht-sunset.png"
+          >
+            <source src="/videos/yacht_video.md2.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-twilight-deep/70 via-twilight-deep/50 to-twilight-deep/80" />
         </div>
 
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center text-white flex-grow flex flex-col justify-center pb-10">
