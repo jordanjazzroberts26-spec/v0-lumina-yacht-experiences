@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 import { Navbar } from "@/components/navbar"
@@ -26,14 +25,17 @@ export function BespokeClient() {
       {/* Hero Section */}
       <section className="relative h-screen min-h-[800px] flex flex-col pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/gallery-2.jpg"
-            alt="Intimate Private Yacht Dining"
-            fill
-            className="object-cover transition-transform duration-10000 hover:scale-105"
-            priority
-            sizes="100vw"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-hidden
+            className="absolute inset-0 h-full w-full object-cover object-[center_42%]"
+            poster="/images/gallery-2.jpg"
+          >
+            <source src="/videos/BJ_hero_video.mp4" type="video/mp4" />
+          </video>
           {/* Softer, warmer gradient for intimate golden-hour feel */}
           <div className="absolute inset-0 bg-gradient-to-b from-twilight-deep/70 via-twilight-deep/30 to-twilight-deep/90 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-t from-twilight-deep via-transparent to-transparent opacity-80" />
