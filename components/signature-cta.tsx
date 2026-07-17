@@ -12,25 +12,25 @@ export function SignatureCta({ onOpenModal }: SignatureCtaProps) {
   return (
     <section className="relative py-32 lg:py-48 flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-[#0D1B2A]">
         <Image
           src="/images/gallery-4.jpg"
           alt="Luxury Yacht Lifestyle"
           fill
-          className="object-cover"
+          className="object-cover contrast-[1.15] saturate-[1.2] sepia-[.10]"
           sizes="100vw"
         />
-        {/* Dark elegant overlay */}
-        <div className="absolute inset-0 bg-twilight-deep/80 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-twilight-deep via-transparent to-twilight-deep/50" />
+        {/* Dark elegant overlay - neutralized to remove heavy blue cast, using deep charcoal/navy */}
+        <div className="absolute inset-0 bg-[#0D1B2A]/50 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A]/95 via-[#0D1B2A]/60 to-[#0D1B2A]/70" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center text-white">
         <ScrollAnimation animation="fade-up">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]">
             Ready for Your Signature Escape?
           </h2>
-          <p className="text-lg md:text-xl text-pearl/90 leading-relaxed max-w-3xl mx-auto mb-10 font-medium">
+          <p className="text-lg md:text-xl text-white leading-relaxed max-w-3xl mx-auto mb-10 font-medium">
             Begin with a personal consultation and let us craft the perfect multi-day voyage for you.
           </p>
 
@@ -45,18 +45,18 @@ export function SignatureCta({ onOpenModal }: SignatureCtaProps) {
 
         <ScrollAnimation animation="fade-up" delay={200} className="mt-32 pt-16 border-t border-white/20">
           <div className="max-w-2xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-3 tracking-wide">Signature Departures & Exclusive Offers</h3>
-            <p className="text-pearl/70 mb-8 text-sm leading-relaxed max-w-md mx-auto">
+            <h3 className="text-2xl font-semibold mb-3 tracking-wide text-champagne">Signature Departures & Exclusive Offers</h3>
+            <p className="text-white/90 mb-8 text-sm leading-relaxed max-w-md mx-auto">
               Subscribe to receive curated itineraries, early access to new vessels, and insider nautical insights.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>
               <div className="relative flex-grow">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <EnvelopeSimple className="h-5 w-5 text-white/50" />
+                  <EnvelopeSimple className="h-5 w-5 text-white/70" />
                 </div>
                 <input
                   type="email"
-                  className="block w-full pl-12 pr-4 py-3.5 border border-white/30 rounded-radius bg-white/10 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-champagne focus:bg-white/20 sm:text-base backdrop-blur-md transition-all shadow-inner"
+                  className="block w-full pl-12 pr-4 py-3.5 border border-white/40 rounded-radius bg-twilight-deep/80 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-champagne focus:bg-twilight-deep sm:text-base backdrop-blur-md transition-all shadow-inner"
                   placeholder="Enter your email address"
                   required
                 />
