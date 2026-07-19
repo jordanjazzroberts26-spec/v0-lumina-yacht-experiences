@@ -34,7 +34,7 @@ export function BespokeClient() {
             className="absolute inset-0 h-full w-full object-cover object-[center_42%]"
             poster="/images/gallery-2.jpg"
           >
-            <source src="/videos/BJ_hero_video.mp4" type="video/mp4" />
+            <source src="/videos/BJ_video_2.mp4" type="video/mp4" />
           </video>
           {/* Softer, warmer gradient for intimate golden-hour feel */}
           <div className="absolute inset-0 bg-gradient-to-b from-twilight-deep/70 via-twilight-deep/30 to-twilight-deep/90 mix-blend-multiply" />
