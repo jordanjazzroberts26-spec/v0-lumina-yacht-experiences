@@ -10,6 +10,12 @@ import { BespokeIntro } from "@/components/bespoke-intro"
 import { BespokePossibilities } from "@/components/bespoke-possibilities"
 import { BespokeProcess } from "@/components/bespoke-process"
 import { BespokeFleet } from "@/components/bespoke-fleet"
+import { BespokeDestinations } from "@/components/bespoke-destinations"
+import { BespokeGallery } from "@/components/bespoke-gallery"
+import { BespokeTestimonials } from "@/components/bespoke-testimonials"
+import { BespokeDifference } from "@/components/bespoke-difference"
+import { BespokeInvestment } from "@/components/bespoke-investment"
+import { BespokeFaq } from "@/components/bespoke-faq"
 import { ScrollAnimation } from "@/lib/animations"
 
 export function BespokeClient() {
@@ -105,6 +111,18 @@ export function BespokeClient() {
       <BespokeProcess />
 
       <BespokeFleet />
+
+      <BespokeDestinations />
+
+      <BespokeGallery />
+
+      <BespokeTestimonials />
+
+      <BespokeDifference />
+
+      <BespokeInvestment />
+
+      <BespokeFaq />
 
       <Footer />
       
